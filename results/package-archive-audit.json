@@ -1,0 +1,30 @@
+[
+  {
+    "bytes": 455685232,
+    "entry": "workers/cuda/cublasLt64_13.dll",
+    "passed": true,
+    "sha256": "8f54d7b3e5173bf2659f45bad6ae789ffef8218ab6254f10c0cc0cc5e3ec874c",
+    "package": "gpubench-cuda-0.1.0-win-x64.zip"
+  },
+  {
+    "bytes": 1527296,
+    "entry": "workers/cuda/cuda_worker.exe",
+    "passed": true,
+    "sha256": "51ab493675d7444350c87cef875362769336073668efdd80ebebff5b1088812f",
+    "package": "gpubench-cuda-0.1.0-win-x64.zip"
+  },
+  {
+    "bytes": 535040,
+    "entry": "gpubench.exe",
+    "passed": true,
+    "sha256": "3813fb6a0e0429aae16d6228097b8f2bca7a52f62800ab74ef02244da6832e62",
+    "package": "gpubench-host-0.1.0-win-x64.zip"
+  },
+  {
+    "bytes": 526336,
+    "entry": "workers/opencl/opencl_worker.exe",
+    "passed": true,
+    "sha256": "82109c2af0bc3bea4bfa1530bf4f5b2142d64d9ae7d2fd0ecffa518c7bd222dc",
+    "package": "gpubench-opencl-0.1.0-win-x64.zip"
+  }
+]

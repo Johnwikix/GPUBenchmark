@@ -1,0 +1,432 @@
+[
+  {
+    "path": "CMakeLists.txt",
+    "bytes": 2824,
+    "sha256": "441fe2acb55e0b80675702e1f40050497940ef965312e7d3f04d1fd6f3732ee1"
+  },
+  {
+    "path": "CMakePresets.json",
+    "bytes": 588,
+    "sha256": "3a81716cfc68c76fc593fec389e99d864319b4509fce8b40f50c6297d485c1dd"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 55,
+    "sha256": "741436ea0e896c3e4d8aaffb4181dc76bcda49be677a902f17ca55cc8c044793"
+  },
+  {
+    "path": "README.md",
+    "bytes": 3199,
+    "sha256": "0d1e912e0a2ff975c9955c30a767f27cdd3316c61ae5d6a4214f322e9dce8731"
+  },
+  {
+    "path": "dependencies.lock.json",
+    "bytes": 7846,
+    "sha256": "77230e3ed3f8140ccd64420a474c9055c95665b674de06963b61a962a5e339b0"
+  },
+  {
+    "path": "WINDOWS_CONSUMER_GPU_BENCHMARK_AGENT_PLAN.md",
+    "bytes": 41870,
+    "sha256": "6063beb2384b4b21e36e6fd15e683c6371390fd72876a3ce4e7d898c6b041392"
+  },
+  {
+    "path": "src\\common\\core.hpp",
+    "bytes": 9528,
+    "sha256": "616fb87aeb1dbdad7dcf1df86a38e5e64f7dbe7b6da276f2f9e1e9e77381312b"
+  },
+  {
+    "path": "src\\common\\memory_budget.hpp",
+    "bytes": 1929,
+    "sha256": "6dea8d5e9694d52b4888f688cbee27ad1e856673f116ab8e33baaa63203836e0"
+  },
+  {
+    "path": "src\\common\\worker.hpp",
+    "bytes": 3008,
+    "sha256": "96cc0a24d0288a955bac9719696481059ec47cc9560571901db96c81ec091967"
+  },
+  {
+    "path": "src\\host\\main.cpp",
+    "bytes": 16884,
+    "sha256": "6a107aa894556b1190d03cb546102f4ee388a73e0e2945b60f56086900f3d35e"
+  },
+  {
+    "path": "src\\host\\process.hpp",
+    "bytes": 8808,
+    "sha256": "ed2c96e7a52905c80dfea2cc6249a8fcf311b989692e5eace4ef16b7b72abd6c"
+  },
+  {
+    "path": "workers\\amd\\alu.hip",
+    "bytes": 2696,
+    "sha256": "87874bd975bb3f619b278812e6c070a3ce483ebd5813a5c2c218f696ea8f951e"
+  },
+  {
+    "path": "workers\\amd\\amd.hpp",
+    "bytes": 6078,
+    "sha256": "dd7f6c8abe48517976e30053b0d22e6680f938177d97b9407304996128690b97"
+  },
+  {
+    "path": "workers\\amd\\build_metadata.hpp.in",
+    "bytes": 276,
+    "sha256": "ad5a331c2f8fd5790da64ac94b427cc147d8b998f35643b18d6aa33904fb542f"
+  },
+  {
+    "path": "workers\\amd\\CMakeLists.txt",
+    "bytes": 4211,
+    "sha256": "e810b9065b4592a0c81a29d62e7293f6d7373f2864f653335cabcaa3b8a3d6e3"
+  },
+  {
+    "path": "workers\\amd\\gemm.cpp",
+    "bytes": 18435,
+    "sha256": "fcf1af4f4a58e8db8cee32ed1da550dd04e4172c64353a3886132e8d4139e1f8"
+  },
+  {
+    "path": "workers\\amd\\kernels.hpp",
+    "bytes": 247,
+    "sha256": "9701ee176f135bd8238b064947a212dfb78554a350708119e7e189a04ad3074a"
+  },
+  {
+    "path": "workers\\amd\\main.cpp",
+    "bytes": 15984,
+    "sha256": "5ca901ac69b9c38f2157b87275175d501a0f337834a1fdeb3ef6140ff4943f86"
+  },
+  {
+    "path": "workers\\amd\\README.md",
+    "bytes": 9090,
+    "sha256": "d0a3835c88a897f1dcaa64e6ebb0607a46bc2af561cf7fe5b5903778c7266d3c"
+  },
+  {
+    "path": "workers\\amd\\verify-amd.ps1",
+    "bytes": 3482,
+    "sha256": "6b23a389f4ab194e8faf9b2dc71d23a31498a01108ac4a3101283df1a727fa19"
+  },
+  {
+    "path": "workers\\amd\\wmma_rdna3.hip",
+    "bytes": 1413,
+    "sha256": "627a276b432b791df71d7bd32ecc9ad1fb0ce823482ddb1519566843666935d0"
+  },
+  {
+    "path": "workers\\amd\\wmma_rdna4.hip",
+    "bytes": 2752,
+    "sha256": "38237ea6601df72fdb2ca495f8ba6b5c054945456694871f3958e7a15243d1a7"
+  },
+  {
+    "path": "workers\\amd\\verification\\matrix-mapping-reference.json",
+    "bytes": 3888,
+    "sha256": "232a27a508779168fd699d23cbaa47fa1f5014644cac00c48fb172d085ac63c9"
+  },
+  {
+    "path": "workers\\amd\\verification\\missing-sdk.json",
+    "bytes": 734,
+    "sha256": "5c443add0914a38272ca712f2cc0fe6caebec5be5d0415c299bf0861f4f38207"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna3-fp16-A.csv",
+    "bytes": 4833,
+    "sha256": "6c4ac5675a62bff798ba0426016cf6d3c9cce22afdf79e37c97049ecb9dbcc0e"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna3-fp16-B.csv",
+    "bytes": 4833,
+    "sha256": "fde0e4eda1c3583d1519de7a6fb2b3fa6ae7f55091768349c18762545ebe43c7"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna3-fp16-D.csv",
+    "bytes": 2449,
+    "sha256": "4b585d3e8bcc3d86fe28a95c0ee7a68c85b8871c9fbe5dee412872705539ec39"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp16-A.csv",
+    "bytes": 2509,
+    "sha256": "9b0b20a4c0d6d6d2d849c57124aac18141208373d1991986931ec999561bc4f8"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp16-B.csv",
+    "bytes": 2509,
+    "sha256": "be5b254827847a631edc2a219de2a067c36369adbb367921c8b0b90010f53d50"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp16-D.csv",
+    "bytes": 2449,
+    "sha256": "6ab01bec3e3853f844bb2c514e0e3c25b1a6b0f513fb3ec9d4302ff3c85ed6bc"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp8-A.csv",
+    "bytes": 2511,
+    "sha256": "a57a9d764896f4030ca54816eb96b180ac90eaf9406edf6eabea94d217bd7f62"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp8-B.csv",
+    "bytes": 2511,
+    "sha256": "043072953858b495de8059c6a9d6aa25b6902687eab273cc2528753950eaaf11"
+  },
+  {
+    "path": "workers\\amd\\verification\\rdna4-fp8-D.csv",
+    "bytes": 2453,
+    "sha256": "ac5a4293358bd831c4ba48a09492f02ef5006dcbfe39c41a6504685f358b5d72"
+  },
+  {
+    "path": "workers\\amd\\verification\\script-parser.json",
+    "bytes": 209,
+    "sha256": "1a23d98f0046901288ec60647e05abae24b1e8ace7d00c568d8f46620e29b3d9"
+  },
+  {
+    "path": "workers\\cuda\\build-windows-elevated.log",
+    "bytes": 54322,
+    "sha256": "5b1b5e6a953d360e22eae4417f7f9dfcb1cb3317c3b71a36cbe346c0f8061d6b"
+  },
+  {
+    "path": "workers\\cuda\\build-windows-final.log",
+    "bytes": 36070,
+    "sha256": "882ba72c693f1a1e6c59647b74b5ce4a55149d7c4eb1c4388212f9772b31fe4a"
+  },
+  {
+    "path": "workers\\cuda\\build-windows-frozen.log",
+    "bytes": 36070,
+    "sha256": "882ba72c693f1a1e6c59647b74b5ce4a55149d7c4eb1c4388212f9772b31fe4a"
+  },
+  {
+    "path": "workers\\cuda\\build-windows-linearity.log",
+    "bytes": 36070,
+    "sha256": "882ba72c693f1a1e6c59647b74b5ce4a55149d7c4eb1c4388212f9772b31fe4a"
+  },
+  {
+    "path": "workers\\cuda\\build-windows-scale-control.log",
+    "bytes": 36070,
+    "sha256": "63159d7bd65dab664009377ba095a256bfcc100ebe9aa8f3bf594db1815e0417"
+  },
+  {
+    "path": "workers\\cuda\\build-windows.log",
+    "bytes": 2611,
+    "sha256": "5e483e599cc64c0293fc6027671875316703cac060658e3d6c670eeef283883d"
+  },
+  {
+    "path": "workers\\cuda\\CMakeLists.txt",
+    "bytes": 1786,
+    "sha256": "8e4af097d9cf6c300bb12c264d770beb2812205f7533bfadc677d27362f6cbf5"
+  },
+  {
+    "path": "workers\\cuda\\evidence.json",
+    "bytes": 4470,
+    "sha256": "ba491d50d79541c39464479fe5e6a3f532125fcaf042bf7cbe6de882babcd329"
+  },
+  {
+    "path": "workers\\cuda\\kernel_api.hpp",
+    "bytes": 470,
+    "sha256": "2156a2d1369bb388f5212651195762e3216906bb3a3960985942e684bebbc870"
+  },
+  {
+    "path": "workers\\cuda\\kernels.cu",
+    "bytes": 2405,
+    "sha256": "0900250955eed2e0205f33ec475c594e602cb71704527809383fd4234fe359a5"
+  },
+  {
+    "path": "workers\\cuda\\main.cpp",
+    "bytes": 37553,
+    "sha256": "55b65d3c75ade432b2c490f6992f192d8c291696b032ac7f9586b0dc9084a5ec"
+  },
+  {
+    "path": "workers\\cuda\\README.md",
+    "bytes": 5109,
+    "sha256": "33b03cef4e34b00816513dafc97ec642fa2d46d446e613e80e31db05d9bbfb87"
+  },
+  {
+    "path": "workers\\cuda\\REFERENCES.md",
+    "bytes": 1788,
+    "sha256": "96cd413647f37710df012a30b324e233edb7636ba99dbfc08490b9584ec1fbf7"
+  },
+  {
+    "path": "workers\\cuda\\VALIDATION.md",
+    "bytes": 6609,
+    "sha256": "d142a486b0c48e85db471465c2738b70d62e0303c369ece9a9eab91718ac98da"
+  },
+  {
+    "path": "workers\\intel\\CMakeLists.txt",
+    "bytes": 1522,
+    "sha256": "a86b29c1007775148ea9e0f286d04545b0ff3c3b50859918739c056f626b4472"
+  },
+  {
+    "path": "workers\\intel\\intel_worker.cpp",
+    "bytes": 47324,
+    "sha256": "f77b171c7c66a13d12f3eb66749c88a7c1a04e17fff3ec6587fd68bdb17c6c5b"
+  },
+  {
+    "path": "workers\\intel\\README.md",
+    "bytes": 7086,
+    "sha256": "230b662ab60623dc369c468d70283d810fe7bd8907ce1a9fa9812dab15d631aa"
+  },
+  {
+    "path": "workers\\intel\\SOURCES.json",
+    "bytes": 2424,
+    "sha256": "45319986e87f85817119514a0df9132575e8b551b2923198cf1420433cfbe30d"
+  },
+  {
+    "path": "workers\\intel\\verification\\build-intel.json",
+    "bytes": 393,
+    "sha256": "2e4c8329c59d4aa4b1d9dd15fda5c3ddc07590cdfe7e44ca8ca2398c94a2fca8"
+  },
+  {
+    "path": "workers\\intel\\verification\\build-intel.log",
+    "bytes": 470,
+    "sha256": "7d98dd770f5f237a77f46025bbbf8a1fbebea07e95a42031b4789a9d96287ce3"
+  },
+  {
+    "path": "workers\\intel\\verification\\source-hashes.json",
+    "bytes": 531,
+    "sha256": "7c282b7d4278bf76fa5022b7f96c646bf9b30e3c44e7da1d952f139748a7e594"
+  },
+  {
+    "path": "workers\\opencl\\CMakeLists.txt",
+    "bytes": 809,
+    "sha256": "f5e215f356c9a865d1b5c1a7a039bd02b75eb2b11beec4c4382277a0b41aa9a4"
+  },
+  {
+    "path": "workers\\opencl\\kernel_source.hpp.in",
+    "bytes": 80,
+    "sha256": "3072fecfd9edc60cdf95747e2aa2d8ab57b6d06089710b497e4c0ea3faf1b2d4"
+  },
+  {
+    "path": "workers\\opencl\\main.cpp",
+    "bytes": 18297,
+    "sha256": "3c968306308f879e3d90397dd9934116f60651a92f4e929776c60c6f54985695"
+  },
+  {
+    "path": "kernels\\opencl\\alu.cl",
+    "bytes": 1425,
+    "sha256": "7786b4fefac2779cae64c6c65c2c03d07bb4f2b38d3633ea6173c91936732897"
+  },
+  {
+    "path": "schemas\\protocol-v1.schema.json",
+    "bytes": 1012,
+    "sha256": "bc9bbd4dc272c05be1cc9ff19e833a0d0f1d4824747a08411f0a68e29f90e8d7"
+  },
+  {
+    "path": "schemas\\result-v1.schema.json",
+    "bytes": 5360,
+    "sha256": "32d73c09b9014c3b1d18a58eadb1e91d34c23df2ba25b25064d49d4d46806ea6"
+  },
+  {
+    "path": "tests\\integration\\ctrl_break.py",
+    "bytes": 3472,
+    "sha256": "54685932a6f7496cae1030e623e94f0529c29a7d2faa81a6d0bc537055fcdd02"
+  },
+  {
+    "path": "tests\\integration\\protocol_fixture.cpp",
+    "bytes": 1173,
+    "sha256": "db3716722dcae99ec3f4b60dcf0c921b5569835103cbf6a8941dcea7e7ae135f"
+  },
+  {
+    "path": "tests\\unit\\common_tests.cpp",
+    "bytes": 1920,
+    "sha256": "011086fd4f390efc26ad2a617af04af138894ecdb910fb2fca8b9c9a0a208b1f"
+  },
+  {
+    "path": "scripts\\acquire-cuda.ps1",
+    "bytes": 2500,
+    "sha256": "3df761a67f4ec0735568b5f645ef9f657cd1829e9a236db2fe70d54d35e30000"
+  },
+  {
+    "path": "scripts\\build-windows.ps1",
+    "bytes": 4039,
+    "sha256": "427b707b3e2efc429966a1c425c24b2359bf0122edef15fc63214056a588bbdc"
+  },
+  {
+    "path": "scripts\\check-schemas.ps1",
+    "bytes": 1671,
+    "sha256": "b990bacf42ce01cba95e503b32c4f122a828cc941ee2b11f7211bc66753e588b"
+  },
+  {
+    "path": "scripts\\generate-report.ps1",
+    "bytes": 8291,
+    "sha256": "3018586c14c122b98dab216b7385bbf46172e3c76c3b136cd3c11414306bb1da"
+  },
+  {
+    "path": "scripts\\package-source-evidence.ps1",
+    "bytes": 2424,
+    "sha256": "2a509ecb599b3dc3b343e80e30a03dafee204a62f33c564658b8d466f12694b8"
+  },
+  {
+    "path": "scripts\\package-windows.ps1",
+    "bytes": 6334,
+    "sha256": "5bab750135b2cbfe820d103abd5431b2343ec5db1534c78508a78d4b9fa5f8e3"
+  },
+  {
+    "path": "scripts\\test-host.ps1",
+    "bytes": 5411,
+    "sha256": "ad6e1e2fab204ba5396d9bf10e37b4f1adc9d4a331a5e95a6cbb4a65245d0cd2"
+  },
+  {
+    "path": "scripts\\validate-device.ps1",
+    "bytes": 5375,
+    "sha256": "94b01f640aea16e6f05df275bb3044aaf01c7cb1e1df363b1c769381d12d25cc"
+  },
+  {
+    "path": "docs\\BUILD_WINDOWS.md",
+    "bytes": 2804,
+    "sha256": "dd9cc089baf4de4c8fe158732dcbb6fb49c0ded87501777ec37bf6d06d3d9c2c"
+  },
+  {
+    "path": "docs\\DECISIONS.md",
+    "bytes": 2716,
+    "sha256": "3a451b4d9e1c264cae0c6f20b85fa372a154b946fcded7ebf6b60b22b075a99b"
+  },
+  {
+    "path": "docs\\KNOWN_LIMITATIONS.md",
+    "bytes": 2864,
+    "sha256": "90671bb01a2c750f0ede9143873ed46ca141ee7d480e641e22f4c96302b736d3"
+  },
+  {
+    "path": "docs\\METHODOLOGY.md",
+    "bytes": 6859,
+    "sha256": "b2271d8accf8373a584b5be2222766e2202516c2a8afb783df5d8430704467c1"
+  },
+  {
+    "path": "docs\\PROTOCOL.md",
+    "bytes": 1933,
+    "sha256": "c106d2d89f7a82653dd93e840c3fbadb400aad63672026d8e6e56d5df86d630a"
+  },
+  {
+    "path": "docs\\SUPPORT_MATRIX.md",
+    "bytes": 2254,
+    "sha256": "7c0e2c92f379a9d7f41886795eb4663b97aedfc592a6763a328a4cc576f901e3"
+  },
+  {
+    "path": "docs\\TASK_REPORT.md",
+    "bytes": 5046,
+    "sha256": "867e8dbe144286121e716a73cfc7fdb41b4d3a2c97c99dc90ae70222c2227080"
+  },
+  {
+    "path": "third_party\\nlohmann\\json.hpp",
+    "bytes": 919975,
+    "sha256": "9bea4c8066ef4a1c206b2be5a36302f8926f7fdc6087af5d20b417d0cf103ea6"
+  },
+  {
+    "path": "third_party\\nlohmann\\LICENSE.MIT",
+    "bytes": 1076,
+    "sha256": "86b998c792894ccb911a1cb7994f7a9652894e7a094c0b5e45be2f553f45cf14"
+  },
+  {
+    "path": "third_party\\OpenCL-Headers\\LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  {
+    "path": "third_party\\OpenCL-Headers\\CL\\cl_ext.h",
+    "bytes": 147743,
+    "sha256": "7c096ab39eec245e07b30141cdd061773d23f17eac2a935bfb9e69e5a5adf586"
+  },
+  {
+    "path": "third_party\\OpenCL-Headers\\CL\\cl_platform.h",
+    "bytes": 43222,
+    "sha256": "be9647d121bfea20cfac9fe2be2e3ac7851a0dd77a141363dcc72f126a1a358c"
+  },
+  {
+    "path": "third_party\\OpenCL-Headers\\CL\\cl_version.h",
+    "bytes": 3125,
+    "sha256": "1b161f73c0f0b07121314055f75df6c19d6a93e3a0d24202c6f3e2dd1615b2a2"
+  },
+  {
+    "path": "third_party\\OpenCL-Headers\\CL\\cl.h",
+    "bytes": 81582,
+    "sha256": "3c51949c38bf9bca6dbe919a1f60727bad1ef4a7a321c6d530f7502ddc1fd706"
+  }
+]

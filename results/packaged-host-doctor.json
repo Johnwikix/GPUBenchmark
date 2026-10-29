@@ -1,0 +1,52 @@
+{
+  "app_version": "0.1.0",
+  "backends": {
+    "amd": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\workers\\amd\\amd_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "cuda": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\workers\\cuda\\cuda_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "intel": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\workers\\intel\\intel_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "opencl": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\workers\\opencl\\opencl_worker.exe",
+      "reason": "worker executable not found"
+    }
+  },
+  "build": {
+    "app_version": "0.1.0",
+    "compiler": "195136260",
+    "loaded_modules": [
+      "G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\gpubench.exe",
+      "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+      "C:\\WINDOWS\\SYSTEM32\\apphelp.dll"
+    ],
+    "os": {
+      "architecture": "x64",
+      "build": 26300,
+      "major": 10,
+      "minor": 0,
+      "name": "Windows"
+    },
+    "pointer_bits": 64,
+    "protocol_version": 1
+  },
+  "command_line": "\"G:\\SoftwareProject\\console\\benchmark\\dist\\Release\\gpubench-host-0.1.0-win-x64\\gpubench.exe\" doctor --json results/packaged-host-doctor.json",
+  "devices": [],
+  "results": [],
+  "schema_version": 1,
+  "summary": {
+    "exit_code": 0
+  }
+}

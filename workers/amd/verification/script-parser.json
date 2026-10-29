@@ -1,0 +1,6 @@
+{
+  "command": "System.Management.Automation.Language.Parser.ParseFile(workers/amd/verify-amd.ps1)",
+  "exit_code": 0,
+  "errors": [],
+  "classification": "PowerShell_syntax_only_not_device_execution"
+}

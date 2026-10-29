@@ -1,0 +1,17 @@
+cuda: {"phase":"alu_tuning"}
+cuda: {"phase":"calibration"}
+cuda: {"phase":"warmup"}
+cuda: {"elapsed_ms":102.1187515258789,"phase":"sampling","samples":1}
+cuda: {"elapsed_ms":204.04851531982422,"phase":"sampling","samples":2}
+cuda: {"elapsed_ms":305.1025924682617,"phase":"sampling","samples":3}
+cuda: {"elapsed_ms":405.9211196899414,"phase":"sampling","samples":4}
+cuda: {"elapsed_ms":506.87903594970703,"phase":"sampling","samples":5}
+cuda: {"elapsed_ms":608.9824295043945,"phase":"sampling","samples":6}
+cuda: {"elapsed_ms":711.5014343261719,"phase":"sampling","samples":7}
+cuda: {"elapsed_ms":813.1325073242188,"phase":"sampling","samples":8}
+cuda: {"elapsed_ms":916.1749420166016,"phase":"sampling","samples":9}
+cuda: {"elapsed_ms":1016.9567947387695,"phase":"sampling","samples":10}
+cuda: {"phase":"alu_tuning"}
+cuda: {"phase":"cancellation_requested"}
+cuda: {"phase":"calibration"}
+cuda: {"phase":"warmup"}

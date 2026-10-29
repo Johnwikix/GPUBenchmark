@@ -1,0 +1,38 @@
+-- The CXX compiler identification is MSVC 19.51.36260.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - failed
+-- Check for working CXX compiler: I:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe
+-- Check for working CXX compiler: I:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe - broken
+CMake Error at I:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:73 (message):
+  The C++ compiler
+
+    "I:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'G:/SoftwareProject/console/benchmark/build/cuda-Release/CMakeFiles/CMakeScratch/TryCompile-kik3ko'
+    
+    Run Build Command(s): "G:/Program Files/python/Scripts/ninja.exe" -v cmTC_a3159
+    [1/2] "I:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231\bin\Hostx64\x64\cl.exe"  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\cmTC_a3159.dir\testCXXCompiler.cxx.obj /FdCMakeFiles\cmTC_a3159.dir\ /FS -c G:\SoftwareProject\console\benchmark\build\cuda-Release\CMakeFiles\CMakeScratch\TryCompile-kik3ko\testCXXCompiler.cxx
+    FAILED: CMakeFiles/cmTC_a3159.dir/testCXXCompiler.cxx.obj 
+    "I:\Program Files\Microsoft Visual Studio\18\Community\VC\Tools\MSVC\14.51.36231\bin\Hostx64\x64\cl.exe"  /nologo /TP -D_MBCS  /DWIN32 /D_WINDOWS /EHsc  /Ob0 /Od /RTC1 -MDd -Zi /showIncludes /FoCMakeFiles\cmTC_a3159.dir\testCXXCompiler.cxx.obj /FdCMakeFiles\cmTC_a3159.dir\ /FS -c G:\SoftwareProject\console\benchmark\build\cuda-Release\CMakeFiles\CMakeScratch\TryCompile-kik3ko\testCXXCompiler.cxx
+    G:\SoftwareProject\console\benchmark\build\cuda-Release\CMakeFiles\CMakeScratch\TryCompile-kik3ko\testCXXCompiler.cxx: fatal error C1902: 绋嬪簭鏁版嵁搴撶鐞嗗櫒涓嶅尮閰嶏紱璇锋鏌ュ畨瑁?
+    ninja: build stopped: subcommand failed.
+    
+    
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+-- Configuring incomplete, errors occurred!
+Exception: 
+Line |
+   2 |  .\scripts\build-windows.ps1 -Backends cuda -CudaRoot G:\Tool\Cuda\13. …
+     |  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | CMake configure failed: cuda (1)

@@ -1,0 +1,41 @@
+{
+  "reviewed_on": "2026-10-20",
+  "sdk_candidate_only": "matched Windows oneAPI DPC++ and oneMKL 2026.0 release",
+  "build_verified": false,
+  "hardware_verified": false,
+  "sources": [
+    {
+      "url": "https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-dpcpp/2026-0/gemm.html",
+      "used_for": "2026 USM row_major GEMM signature; half/half input with float scalars and output; device dependency list"
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/docs/onemkl/developer-reference-dpcpp/2026-0/compute-modes.html",
+      "used_for": "compute_mode::standard forbids alternate arithmetic; per-call mode precedes USM dependencies and overrides runtime defaults"
+    },
+    {
+      "url": "https://github.com/intel/llvm/blob/sycl/sycl/doc/extensions/supported/sycl_ext_intel_device_info.asciidoc",
+      "used_for": "Feature macro levels and device aspects for PCI, UUID, free memory, device ID, Windows LUID; code guards each extension level"
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/docs/onemkl/developer-guide-windows/2025-2/cmake-config-for-onemkl.html",
+      "used_for": "Installed MKLConfig.cmake and MKL::MKL_DPCPP target; SDK target naming must be verified for the acquired 2026 package"
+    },
+    {
+      "url": "https://www.intel.com/content/www/us/en/docs/onemkl/get-started-guide/2026-0/overview.html",
+      "used_for": "Windows icx -fsycl, SYCL BLAS library linkage and matched runtime components"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/intel/llvm/sycl/sycl/include/sycl/info/device.hpp",
+      "used_for": "SYCL floating-point capability descriptors and enum values; native FMA and software-float exclusion"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/intel/llvm/sycl/sycl/include/sycl/detail/defines_elementary.hpp",
+      "used_for": "SYCL Windows dynamic CRT requirement: /MD for sycl.dll, /MDd for sycld.dll"
+    },
+    {
+      "url": "https://github.com/intel/llvm/blob/sycl/sycl/doc/extensions/experimental/sycl_ext_oneapi_profiling_tag.asciidoc",
+      "used_for": "Referenced by project plan; experimental profiling tag deliberately not required by this implementation"
+    }
+  ],
+  "caveat": "API documentation supports implementation choices; it does not establish that this source compiles, selects native machine instructions, or has run on a GPU. No performance values are provided."
+}

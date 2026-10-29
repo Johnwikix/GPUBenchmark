@@ -1,0 +1,1446 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RTX 5070 Ti gpubench 实测报告</title><style>body{font:16px/1.6 system-ui,sans-serif;color:#172532;background:#fafbfc;max-width:1200px;margin:36px auto;padding:0 24px}h1{font-size:30px}h2{font-size:21px;margin-top:32px}table{border-collapse:collapse;width:100%;font-size:14px;background:white}th,td{border:1px solid #d9dfe5;padding:8px 10px;text-align:left}th{background:#edf2f6}code,pre{font:13px/1.5 Consolas,monospace}pre{white-space:pre-wrap;background:#edf2f6;padding:14px;overflow-wrap:anywhere}.note{border-left:4px solid #236a93;padding:8px 16px;background:#eff7fb}.num{text-align:right;font-variant-numeric:tabular-nums}a{color:#155b96}footer{color:#506170;font-size:13px;margin-top:36px}</style>
+<h1>RTX 5070 Ti：FP32 / FP16 / FP8 实测</h1>
+<p class="note">本报告只引用本机真实执行且校验通过的结果。ALU 普通 FMA 与 GEMM 矩阵运算分别比较。FP32 为严格 FP32，FP16 GEMM 和 FP8 E4M3 GEMM 均使用 FP32 累加/输出；FP4 已按用户要求延后。数据不代表其他型号或驱动已认证。</p>
+<h2>环境与版本</h2><table><tbody>
+<tr><th>GPU</th><td>NVIDIA GeForce RTX 5070 Ti</td></tr>
+<tr><th>Identity</th><td>{&quot;luid&quot;:&quot;6d0c010000000000&quot;,&quot;luid_node_mask&quot;:1,&quot;pci_bus_id&quot;:&quot;0000:01:00.0&quot;,&quot;uuid&quot;:&quot;9510a92114f7034232ae2924c362def1&quot;}</td></tr>
+<tr><th>Architecture</th><td>sm_120</td></tr>
+<tr><th>Driver</th><td>617.14</td></tr>
+<tr><th>OS</th><td>{&quot;architecture&quot;:&quot;x64&quot;,&quot;build&quot;:26300,&quot;major&quot;:10,&quot;minor&quot;:0,&quot;name&quot;:&quot;Windows&quot;}</td></tr>
+<tr><th>Compiler</th><td>195136260</td></tr>
+<tr><th>Runtime</th><td>{&quot;cuBLASLt&quot;:null,&quot;cuda_compile_baseline&quot;:&quot;13.2.86&quot;,&quot;cuda_driver_api&quot;:13040,&quot;cuda_runtime&quot;:13020,&quot;math_environment&quot;:{&quot;CUBLASLT_LOG_LEVEL&quot;:&quot;0&quot;,&quot;CUBLAS_EMULATE_SINGLE_PRECISION&quot;:&quot;0&quot;,&quot;CUBLAS_LOGINFO_DBG&quot;:&quot;0&quot;,&quot;NVIDIA_TF32_OVERRIDE&quot;:&quot;0&quot;},&quot;modules&quot;:[&quot;G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\ntdll.dll&quot;,&quot;C:\\WINDOWS\\System32\\KERNEL32.DLL&quot;,&quot;C:\\WINDOWS\\System32\\KERNELBASE.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\nvcuda.dll&quot;,&quot;C:\\WINDOWS\\System32\\ADVAPI32.dll&quot;,&quot;C:\\WINDOWS\\System32\\msvcrt.dll&quot;,&quot;C:\\WINDOWS\\System32\\sechost.dll&quot;,&quot;C:\\WINDOWS\\System32\\RPCRT4.dll&quot;,&quot;C:\\WINDOWS\\System32\\gdi32.dll&quot;,&quot;C:\\WINDOWS\\System32\\win32u.dll&quot;,&quot;C:\\WINDOWS\\System32\\gdi32full.dll&quot;,&quot;C:\\WINDOWS\\System32\\msvcp_win.dll&quot;,&quot;C:\\WINDOWS\\System32\\ucrtbase.dll&quot;,&quot;C:\\WINDOWS\\System32\\USER32.dll&quot;,&quot;C:\\WINDOWS\\System32\\IMM32.DLL&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\dxcore.dll&quot;,&quot;C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll&quot;,&quot;C:\\WINDOWS\\System32\\SHLWAPI.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\VERSION.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\bcrypt.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\msasn1.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\cryptnet.dll&quot;,&quot;C:\\WINDOWS\\System32\\CRYPT32.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\cryptbase.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\wldp.dll&quot;,&quot;C:\\WINDOWS\\System32\\combase.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\drvstore.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\devobj.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\nvapi64.dll&quot;,&quot;C:\\WINDOWS\\System32\\Shell32.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\windows.storage.dll&quot;,&quot;C:\\WINDOWS\\System32\\SHCORE.dll&quot;,&quot;C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll&quot;,&quot;C:\\WINDOWS\\System32\\SETUPAPI.dll&quot;,&quot;C:\\WINDOWS\\System32\\ole32.dll&quot;,&quot;C:\\WINDOWS\\System32\\OLEAUT32.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\WINMM.dll&quot;,&quot;C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll&quot;,&quot;C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\profapi.dll&quot;,&quot;C:\\WINDOWS\\System32\\wintrust.dll&quot;,&quot;C:\\WINDOWS\\System32\\imagehlp.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll&quot;,&quot;C:\\WINDOWS\\system32\\rsaenh.dll&quot;,&quot;C:\\WINDOWS\\System32\\bcryptPrimitives.dll&quot;,&quot;C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll&quot;,&quot;C:\\WINDOWS\\SYSTEM32\\gpapi.dll&quot;,&quot;C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll&quot;,&quot;C:\\WINDOWS\\System32\\WS2_32.dll&quot;]}</td></tr>
+<tr><th>Evidence directory</th><td>results/nvidia-0-standard-reuse-20261021-000632</td></tr>
+<tr><th>Generated UTC</th><td>2026-10-20T16:09:04.0130874Z</td></tr>
+</tbody></table><h2>正式性能样本</h2><p>单位 TFLOP/s。Median 为固定 batch 重复次数下全部有效原始 elapsed_ms 的中位数，Best 为最短样本单列；不删除慢样本。每配置至少 7 组、累计设备计时至少 1 秒，warmup 至少 500ms。时间来自同一 CUDA stream 的完整 batch events，保留同步 wall time。校验失败、不可用或取消时吞吐为 null。</p>
+<table><thead><tr><th>Suite / Case</th><th>Logical shape</th><th>Accum</th><th>Median</th><th>Best</th><th>Samples</th><th>Device ms</th><th>Noisy</th><th>Validation / Status</th></tr></thead><tbody>
+<tr><td>alu.fp32.fma</td><td>71680 threads; 16 accum; 1 lanes</td><td>fp32</td><td class="num">55.168</td><td class="num">55.490</td><td>10</td><td>1014.221</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>alu.fp16.fma</td><td>71680 threads; 4 accum; 2 lanes</td><td>fp16</td><td class="num">56.606</td><td class="num">56.783</td><td>10</td><td>1032.866</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp32.strict</td><td>1024 &#215; 1024 &#215; 1024</td><td>fp32</td><td class="num">25.253</td><td class="num">25.754</td><td>11</td><td>1096.982</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp32.strict</td><td>2048 &#215; 2048 &#215; 2048</td><td>fp32</td><td class="num">28.283</td><td class="num">28.398</td><td>10</td><td>1064.649</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp32.strict</td><td>4096 &#215; 4096 &#215; 4096</td><td>fp32</td><td class="num">28.823</td><td class="num">28.870</td><td>10</td><td>1050.658</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp16.acc32</td><td>1024 &#215; 1024 &#215; 1024</td><td>fp32</td><td class="num">79.086</td><td class="num">79.699</td><td>12</td><td>1084.491</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp16.acc32</td><td>2048 &#215; 2048 &#215; 2048</td><td>fp32</td><td class="num">96.400</td><td class="num">96.701</td><td>10</td><td>1070.505</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp16.acc32</td><td>4096 &#215; 4096 &#215; 4096</td><td>fp32</td><td class="num">102.477</td><td class="num">102.985</td><td>10</td><td>1065.757</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp8.e4m3.acc32</td><td>1024 &#215; 1024 &#215; 1024</td><td>fp32</td><td class="num">170.028</td><td class="num">174.530</td><td>20</td><td>1042.853</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp8.e4m3.acc32</td><td>2048 &#215; 2048 &#215; 2048</td><td>fp32</td><td class="num">291.634</td><td class="num">294.226</td><td>11</td><td>1097.565</td><td>False</td><td>passed / ok</td></tr>
+<tr><td>gemm.fp8.e4m3.acc32</td><td>4096 &#215; 4096 &#215; 4096</td><td>fp32</td><td class="num">312.160</td><td class="num">314.188</td><td>10</td><td>1082.061</td><td>False</td><td>passed / ok</td></tr>
+</tbody></table><h2>正确性与可信度</h2><ul><li>GEMM 先执行有正负值的精确构造和随机非方阵小案例完整校验，再抽样性能矩阵；reference 使用真实量化输入与实际 scale。所有输出检查 finite，量化误差与 kernel error 分开保存。</li><li>FP8 scale A=0.5、B=1.5（乘积 0.75）；同一固定 tolerance 必须拒绝故意忽略 scale 的 reference。不会用两个 scale 互相抵消的例子证明缩放正确。</li><li>FP32 使用 CUBLAS_COMPUTE_32F_PEDANTIC，禁 TF32 和单精度模拟；FP8 fast accumulation 关闭。算法搜索、初始化、量化和 readback 在正式计时外。</li><li>SM120 的 FFMA / HFMA2 反汇编及寄存器、spill 构建记录已保存。cuBLASLt 的实际 API 配置与算法 ID 已保存；完整 Tensor profiler 认证和同条件外部基线仍未完成。</li><li>补充证据包含 1/2/4/8 次 GEMM batch 计数/时间、reuse/rotate、奇数非方阵 padding、缺 BLAS 时 ALU 可运行及超显存预算在分配前 SKIP。噪声标记保留，不换用最佳轮次冒充中位数。</li><li>OpenCL 兼容 FP32 独立保存；NVIDIA 驱动未暴露 cl_khr_fp16，OpenCL FP16 为 API SKIP，CUDA FP16 实测照常有效。AMD/Intel 仅源码实现，缺 SDK/GPU，未声称构建或硬件通过。</li></ul>
+<h2>本轮命令与退出码</h2><p>工作目录为项目根目录。完整可复现参数和时间见 commands.json，stdout/stderr 和 worker JSONL 位于同一证据目录。</p>
+<pre>G:\SoftwareProject\console\benchmark\out\Release\gpubench.exe &quot;doctor&quot; &quot;--backend&quot; &quot;cuda&quot; &quot;--json&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\doctor.json&quot; &quot;--log-dir&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\workers&quot;
+exit=0</pre>
+<pre>G:\SoftwareProject\console\benchmark\out\Release\gpubench.exe &quot;list&quot; &quot;--backend&quot; &quot;cuda&quot; &quot;--log-dir&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\workers&quot;
+exit=0</pre>
+<pre>G:\SoftwareProject\console\benchmark\out\Release\gpubench.exe &quot;run&quot; &quot;--backend&quot; &quot;cuda&quot; &quot;--device&quot; &quot;nvidia:0&quot; &quot;--log-dir&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\workers&quot; &quot;--suite&quot; &quot;alu&quot; &quot;--dtype&quot; &quot;fp32,fp16&quot; &quot;--samples&quot; &quot;7&quot; &quot;--duration-ms&quot; &quot;1000&quot; &quot;--warmup-ms&quot; &quot;500&quot; &quot;--seed&quot; &quot;20261020&quot; &quot;--cache&quot; &quot;reuse&quot; &quot;--native-only&quot; &quot;--json&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\alu.json&quot; &quot;--csv&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\alu.csv&quot;
+exit=0</pre>
+<pre>G:\SoftwareProject\console\benchmark\out\Release\gpubench.exe &quot;run&quot; &quot;--backend&quot; &quot;cuda&quot; &quot;--device&quot; &quot;nvidia:0&quot; &quot;--log-dir&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\workers&quot; &quot;--suite&quot; &quot;gemm&quot; &quot;--dtype&quot; &quot;fp32,fp16,fp8&quot; &quot;--sizes&quot; &quot;1024,2048,4096&quot; &quot;--samples&quot; &quot;7&quot; &quot;--duration-ms&quot; &quot;1000&quot; &quot;--warmup-ms&quot; &quot;500&quot; &quot;--seed&quot; &quot;20261020&quot; &quot;--cache&quot; &quot;reuse&quot; &quot;--native-only&quot; &quot;--json&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\gemm.json&quot; &quot;--csv&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\gemm.csv&quot;
+exit=0</pre>
+<pre>G:\SoftwareProject\console\benchmark\out\Release\gpubench.exe &quot;run&quot; &quot;--backend&quot; &quot;cuda&quot; &quot;--device&quot; &quot;nvidia:0&quot; &quot;--log-dir&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\workers&quot; &quot;--suite&quot; &quot;gemm&quot; &quot;--dtype&quot; &quot;fp32,fp16&quot; &quot;--m&quot; &quot;128&quot; &quot;--n&quot; &quot;96&quot; &quot;--k&quot; &quot;80&quot; &quot;--samples&quot; &quot;7&quot; &quot;--duration-ms&quot; &quot;1000&quot; &quot;--warmup-ms&quot; &quot;500&quot; &quot;--seed&quot; &quot;20261020&quot; &quot;--cache&quot; &quot;reuse&quot; &quot;--native-only&quot; &quot;--json&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\non-square.json&quot; &quot;--csv&quot; &quot;.\results\nvidia-0-standard-reuse-20261021-000632\non-square.csv&quot;
+exit=0</pre>
+<h2>原始样本</h2>
+<details><summary>alu / alu.fp32.fma / null</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 104.89161682128906,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 104.929
+  },
+  {
+    &quot;elapsed_ms&quot;: 102.51248168945312,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 102.6312
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.44624328613281,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 101.4699
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.09961700439453,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 101.1384
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.43014526367188,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 100.454
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.9985580444336,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 101.0217
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.52531433105469,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 100.7376
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.51769256591797,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 100.6453
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.76531219482422,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 100.903
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.0335693359375,
+    &quot;flops&quot;: 5572845895680,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 54,
+    &quot;wall_ms&quot;: 101.0744
+  }
+]</pre></details>
+<details><summary>alu / alu.fp16.fma / null</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 101.25923156738281,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.2992
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.35945892333984,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.3837
+  },
+  {
+    &quot;elapsed_ms&quot;: 102.39353942871094,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 102.4194
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.32390594482422,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.3505
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.79174041748047,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.8149
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.263427734375,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.2856
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.3226547241211,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 101.347
+  },
+  {
+    &quot;elapsed_ms&quot;: 108.11894226074219,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 108.151
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.42591857910156,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 107.5287
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.60671997070312,
+    &quot;flops&quot;: 5749823242240,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 46,
+    &quot;wall_ms&quot;: 106.7033
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp32.strict / {&quot;k&quot;:1024,&quot;m&quot;:1024,&quot;n&quot;:1024}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 101.4842529296875,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 101.5067
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.39654541015625,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 100.4219
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.76153564453125,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 100.7867
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.33065795898438,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 99.4588
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.75132751464844,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 99.7775
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.33769226074219,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 100.359
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.54537963867188,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 100.5657
+  },
+  {
+    &quot;elapsed_ms&quot;: 97.80815887451172,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 97.9192
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.03974151611328,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 99.0609
+  },
+  {
+    &quot;elapsed_ms&quot;: 98.39008331298828,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 98.4123
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.13689422607422,
+    &quot;flops&quot;: 2518998319104,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 1173,
+    &quot;wall_ms&quot;: 99.159
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp32.strict / {&quot;k&quot;:2048,&quot;m&quot;:2048,&quot;n&quot;:2048}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 106.28150177001953,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.5143
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.6358413696289,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 107.6609
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.94294738769531,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 105.9682
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.86918640136719,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 105.8942
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.8786849975586,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.9021
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.53858947753906,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.5604
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.69551849365234,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.7345
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.31961822509766,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.3572
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.24649810791016,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.2695
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.24022674560547,
+    &quot;flops&quot;: 3006477107200,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 175,
+    &quot;wall_ms&quot;: 106.2825
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp32.strict / {&quot;k&quot;:4096,&quot;m&quot;:4096,&quot;n&quot;:4096}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 104.97772979736328,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 105.0027
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.94445037841797,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 105.0403
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.77356719970703,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 104.797
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.77088165283203,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 104.7944
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.46371459960938,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 105.4857
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.46224212646484,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 105.6007
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.86598205566406,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 104.9109
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.80572509765625,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 105.8513
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.7347183227539,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 104.7583
+  },
+  {
+    &quot;elapsed_ms&quot;: 104.85935974121094,
+    &quot;flops&quot;: 3023656976384,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 22,
+    &quot;wall_ms&quot;: 104.8828
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp16.acc32 / {&quot;k&quot;:1024,&quot;m&quot;:1024,&quot;n&quot;:1024}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 89.9369888305664,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 89.9696
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.2927017211914,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.3074
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.94931030273438,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.9784
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.50387573242188,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.5192
+  },
+  {
+    &quot;elapsed_ms&quot;: 89.79788970947266,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 89.816
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.38175964355469,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.4137
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.9005126953125,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.9163
+  },
+  {
+    &quot;elapsed_ms&quot;: 89.97625732421875,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 89.9934
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.35286712646484,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.3666
+  },
+  {
+    &quot;elapsed_ms&quot;: 90.42681884765625,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 90.4444
+  },
+  {
+    &quot;elapsed_ms&quot;: 91.29987335205078,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 91.3213
+  },
+  {
+    &quot;elapsed_ms&quot;: 89.67247772216797,
+    &quot;flops&quot;: 7146825580544,
+    &quot;index&quot;: 11,
+    &quot;repetitions&quot;: 3328,
+    &quot;wall_ms&quot;: 89.8955
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp16.acc32 / {&quot;k&quot;:2048,&quot;m&quot;:2048,&quot;n&quot;:2048}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 107.37910461425781,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.4029
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.09228515625,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.1171
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.6022720336914,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 106.6408
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.62175750732422,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 106.644
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.76416015625,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 106.7871
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.77894592285156,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.8936
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.59564971923828,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 106.6167
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.72067260742188,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.5045
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.65737915039062,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.6875
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.29264068603516,
+    &quot;flops&quot;: 10307921510400,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 600,
+    &quot;wall_ms&quot;: 107.4063
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp16.acc32 / {&quot;k&quot;:4096,&quot;m&quot;:4096,&quot;n&quot;:4096}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 106.74646759033203,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 106.7865
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.46947479248047,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 105.493
+  },
+  {
+    &quot;elapsed_ms&quot;: 106.115234375,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 106.1431
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.4300765991211,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 105.4732
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.71424102783203,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 105.7364
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.78889465332031,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 105.8906
+  },
+  {
+    &quot;elapsed_ms&quot;: 105.77833557128906,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 105.9197
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.92765045166016,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 107.9682
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.63308715820312,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 107.6728
+  },
+  {
+    &quot;elapsed_ms&quot;: 109.15347290039062,
+    &quot;flops&quot;: 10857677324288,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 79,
+    &quot;wall_ms&quot;: 109.176
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp8.e4m3.acc32 / {&quot;k&quot;:1024,&quot;m&quot;:1024,&quot;n&quot;:1024}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 53.86006546020508,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 53.8729
+  },
+  {
+    &quot;elapsed_ms&quot;: 53.09123229980469,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 53.1162
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.24492645263672,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.5806
+  },
+  {
+    &quot;elapsed_ms&quot;: 53.384033203125,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 53.4056
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.65203094482422,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.6646
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.9502067565918,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.9648
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.60956954956055,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.623
+  },
+  {
+    &quot;elapsed_ms&quot;: 53.571617126464844,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 53.5883
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.8144645690918,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.8344
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.555519104003906,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.5736
+  },
+  {
+    &quot;elapsed_ms&quot;: 54.571937561035156,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 54.6712
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.46211242675781,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 11,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.4794
+  },
+  {
+    &quot;elapsed_ms&quot;: 50.82851028442383,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 12,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 50.843
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.89708709716797,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 13,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.9084
+  },
+  {
+    &quot;elapsed_ms&quot;: 50.78425598144531,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 14,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 50.8006
+  },
+  {
+    &quot;elapsed_ms&quot;: 55.437599182128906,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 15,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 55.4477
+  },
+  {
+    &quot;elapsed_ms&quot;: 50.39868927001953,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 16,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 50.406
+  },
+  {
+    &quot;elapsed_ms&quot;: 50.690494537353516,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 17,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 50.7047
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.880191802978516,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 18,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.9489
+  },
+  {
+    &quot;elapsed_ms&quot;: 51.16854476928711,
+    &quot;flops&quot;: 8796093022208,
+    &quot;index&quot;: 19,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 51.2356
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp8.e4m3.acc32 / {&quot;k&quot;:2048,&quot;m&quot;:2048,&quot;n&quot;:2048}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 98.5684814453125,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 98.7164
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.14383697509766,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 99.2599
+  },
+  {
+    &quot;elapsed_ms&quot;: 98.27059173583984,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 98.3559
+  },
+  {
+    &quot;elapsed_ms&quot;: 98.54649353027344,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 98.5724
+  },
+  {
+    &quot;elapsed_ms&quot;: 98.78880310058594,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 98.8133
+  },
+  {
+    &quot;elapsed_ms&quot;: 98.81206512451172,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 98.8351
+  },
+  {
+    &quot;elapsed_ms&quot;: 100.81212615966797,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 100.8347
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.04386901855469,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 101.19
+  },
+  {
+    &quot;elapsed_ms&quot;: 101.82943725585938,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 102.0442
+  },
+  {
+    &quot;elapsed_ms&quot;: 102.23225402832031,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 102.2598
+  },
+  {
+    &quot;elapsed_ms&quot;: 99.5169906616211,
+    &quot;flops&quot;: 28913719836672,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 1683,
+    &quot;wall_ms&quot;: 99.5497
+  }
+]</pre></details>
+<details><summary>gemm / gemm.fp8.e4m3.acc32 / {&quot;k&quot;:4096,&quot;m&quot;:4096,&quot;n&quot;:4096}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 107.2543716430664,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.4327
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.96422576904297,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.9868
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.17308807373047,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.1985
+  },
+  {
+    &quot;elapsed_ms&quot;: 108.453857421875,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 108.4756
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.2681884765625,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.409
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.31017303466797,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.36
+  },
+  {
+    &quot;elapsed_ms&quot;: 107.77497863769531,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 107.7991
+  },
+  {
+    &quot;elapsed_ms&quot;: 108.9906234741211,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 109.0298
+  },
+  {
+    &quot;elapsed_ms&quot;: 110.01980590820312,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 110.2554
+  },
+  {
+    &quot;elapsed_ms&quot;: 109.8515853881836,
+    &quot;flops&quot;: 33672543600640,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 245,
+    &quot;wall_ms&quot;: 109.8915
+  }
+]</pre></details>
+<details><summary>non-square / gemm.fp32.strict / {&quot;k&quot;:80,&quot;m&quot;:128,&quot;n&quot;:96}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 30.38060760498047,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.388
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.907264709472656,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.9146
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.156192779541016,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.1637
+  },
+  {
+    &quot;elapsed_ms&quot;: 36.413822174072266,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 36.4221
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.274656295776367,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.2837
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.69900894165039,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.7066
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.64419174194336,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.6509
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.79635238647461,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.8034
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.444128036499023,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.4564
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.19910430908203,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.2066
+  },
+  {
+    &quot;elapsed_ms&quot;: 34.187232971191406,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 34.1945
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.692960739135742,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 11,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.6997
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.24073600769043,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 12,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.2482
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.943775177001953,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 13,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.9508
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.594144821166992,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 14,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.601
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.909631729125977,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 15,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.9167
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.573152542114258,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 16,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.5803
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.317983627319336,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 17,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.3246
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.22991943359375,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 18,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.2366
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.007776260375977,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 19,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.0151
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.24620819091797,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 20,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.2535
+  },
+  {
+    &quot;elapsed_ms&quot;: 28.403776168823242,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 21,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 28.4106
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.117311477661133,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 22,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.1237
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.849088668823242,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 23,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.8559
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.972320556640625,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 24,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.978
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.060895919799805,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 25,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.068
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.219839096069336,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 26,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.2265
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.573375701904297,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 27,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.5795
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.780128479003906,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 28,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.7872
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.434816360473633,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 29,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.4544
+  },
+  {
+    &quot;elapsed_ms&quot;: 32.05472183227539,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 30,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 32.0619
+  },
+  {
+    &quot;elapsed_ms&quot;: 29.926240921020508,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 31,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 29.9333
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.357088088989258,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 32,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.3698
+  }
+]</pre></details>
+<details><summary>non-square / gemm.fp16.acc32 / {&quot;k&quot;:80,&quot;m&quot;:128,&quot;n&quot;:96}</summary><pre>[
+  {
+    &quot;elapsed_ms&quot;: 23.61712074279785,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 0,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.6252
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.693952560424805,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 1,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.7001
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.046239852905273,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 2,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.0519
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.237951278686523,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 3,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.244
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.8372802734375,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 4,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.8436
+  },
+  {
+    &quot;elapsed_ms&quot;: 26.3558406829834,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 5,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 26.362
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.041824340820312,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 6,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.048
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.987136840820312,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 7,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.9951
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.773279190063477,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 8,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.7814
+  },
+  {
+    &quot;elapsed_ms&quot;: 26.915647506713867,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 9,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 26.9272
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.118751525878906,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 10,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.1246
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.680448532104492,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 11,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.6906
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.71504020690918,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 12,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.7223
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.515167236328125,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 13,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.5232
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.815168380737305,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 14,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.8239
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.248064041137695,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 15,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.2555
+  },
+  {
+    &quot;elapsed_ms&quot;: 27.504127502441406,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 16,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 27.5126
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.043167114257812,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 17,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.0557
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.99977684020996,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 18,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.0073
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.388927459716797,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 19,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.5242
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.272064208984375,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 20,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.2801
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.516639709472656,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 21,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.5237
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.056320190429688,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 22,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.0635
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.98566436767578,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 23,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.9932
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.343807220458984,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 24,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.3491
+  },
+  {
+    &quot;elapsed_ms&quot;: 26.660703659057617,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 25,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 26.6674
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.133024215698242,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 26,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.1391
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.780384063720703,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 27,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.7874
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.408063888549805,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 28,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.414
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.3438720703125,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 29,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.3529
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.384639739990234,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 30,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.3916
+  },
+  {
+    &quot;elapsed_ms&quot;: 25.877792358398438,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 31,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 25.884
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.565759658813477,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 32,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.5719
+  },
+  {
+    &quot;elapsed_ms&quot;: 24.35545539855957,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 33,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 24.3686
+  },
+  {
+    &quot;elapsed_ms&quot;: 27.25334358215332,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 34,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 27.2603
+  },
+  {
+    &quot;elapsed_ms&quot;: 31.536800384521484,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 35,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 31.5421
+  },
+  {
+    &quot;elapsed_ms&quot;: 30.041759490966797,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 36,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 30.0477
+  },
+  {
+    &quot;elapsed_ms&quot;: 26.998016357421875,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 37,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 27.0032
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.73040008544922,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 38,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.7361
+  },
+  {
+    &quot;elapsed_ms&quot;: 23.645503997802734,
+    &quot;flops&quot;: 8053063680,
+    &quot;index&quot;: 39,
+    &quot;repetitions&quot;: 4096,
+    &quot;wall_ms&quot;: 23.6537
+  }
+]</pre></details>
+<h2>证据文件与限制</h2><p>该报告与 JSON/CSV、原始样本、commands.json、worker 日志、PE imports、SHA256 清单一起交付。原生 Windows 构建已完成；无 VS/Toolkit/Python 的干净机器部署、RTX40 和 AMD/Intel 真机仍待验证。此机器是 Windows build26300、RTX5070Ti/617.14，不能外推为所有 Windows/GPU 组合的支持承诺。</p><footer>gpubench 0.1.0 · Plan v1.1 · 原始数据优先；报告仅作可读呈现。未修改驱动、TDR、功耗或频率。</footer></html>
+

@@ -1,0 +1,12 @@
+{
+  "command": "pwsh -NoProfile -File .\\scripts\\build-windows.ps1 -Backends amd -Configuration Release",
+  "exit_code": 1,
+  "captured_at_utc": "2026-10-20T15:16:51.0306447Z",
+  "output": "Attempting to perform the InitializeDefaultDrives operation on the 'FileSystem' provider failed.\r\nException: ROCm Core SDK 10.1.0 Windows missing; supply -HipRoot (HIP, headers, kernel data).\r\n",
+  "implementation_status": "source_implemented_uncompiled",
+  "windows_sdk_build_status": "not_built",
+  "hardware_validation_status": "not_run",
+  "hip_path": null,
+  "gpu": [],
+  "gpu_detection_error": "Get-CimInstance Win32_VideoController: 无法从客户端中访问 CIM 资源。 Empty gpu list is not evidence of no GPU."
+}

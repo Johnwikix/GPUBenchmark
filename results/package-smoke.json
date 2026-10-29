@@ -1,0 +1,6 @@
+{
+  "clean_machine": false,
+  "condition": "Same development Windows; staged package private DLL, not clean-machine certification",
+  "host_exit_code": 0,
+  "cuda_probe_exit_code": 0
+}

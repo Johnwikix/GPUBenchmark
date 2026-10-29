@@ -1,0 +1,13 @@
+{
+  "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows.ps1 -Backends intel",
+  "exit_code": 1,
+  "build_passed": false,
+  "hardware_tested": false,
+  "evidence_kind": "actual missing-SDK preflight, not compiler invocation",
+  "missing": [
+    "icx/DPC++",
+    "oneMKL SYCL development/runtime",
+    "Intel GPU"
+  ],
+  "date": "2026-10-20"
+}

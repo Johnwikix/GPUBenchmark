@@ -1,0 +1,10 @@
+{
+  "command": "G:\\Tool\\Cuda\\13.2.2\\toolkit\\bin\\cuobjdump.exe --dump-sass --gpu-architecture sm_120 .\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+  "exit_code": 0,
+  "worker_sha256": "ABBCEF5A1C45948E9D52F03EDB4068BB4291BFA8C275F0E87A92C7EA7D211447",
+  "sass_sha256": "4BC7B0337A14CCE521565D2AFAF64997AA14ED64DFE943CD6A52B8F99C752775",
+  "float_fma_count": 1200,
+  "half2_fma_count": 9744,
+  "ptxas_build_log": "workers/cuda/build-windows-elevated.log",
+  "note": "SM120 ptxas reports 0-byte stack frame and 0 spill stores/loads for all ALU variants. SASS verifies retained FFMA/HFMA2 hot loops; no Tensor Core profiler evidence is claimed."
+}

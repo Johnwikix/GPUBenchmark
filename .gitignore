@@ -1,0 +1,18 @@
+/build/
+/out/
+/dist/
+/dependencies/
+*.tmp
+__pycache__/
+
+# Heavy raw evidence dumps: keep curated reports/evidence JSONs, exclude bulk data
+/results/throughput-diagnosis/
+/results/sm120-acc16/
+/results/official-peaks-research/
+/results/logs/
+/results/*.log
+/results/*-sass*.txt
+/results/nvidia-0-*/
+/results/throughput-optimization/
+/results/cuda-missing-blas/
+/results/host-tests/

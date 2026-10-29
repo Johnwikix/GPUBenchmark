@@ -1,0 +1,2098 @@
+{
+  "app_version": "0.1.0",
+  "backends": {
+    "cuda": {
+      "backend_status": "ready",
+      "effective_environment": {
+        "CUBLASLT_LOG_FILE": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "CUBLASLT_LOG_LEVEL": "0",
+        "CUBLASLT_LOG_MASK": "0",
+        "CUBLAS_COMPUTE_EMULATION_STRATEGY": "0",
+        "CUBLAS_LOGDEST_DBG": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "CUBLAS_LOGINFO_DBG": "0",
+        "DNNL_VERBOSE": "0",
+        "HIPBLASLT_LOG_FILE": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "HIPBLASLT_LOG_LEVEL": "0",
+        "HIPBLASLT_LOG_MASK": "0",
+        "MKL_VERBOSE": "0",
+        "NVIDIA_TF32_OVERRIDE": "0",
+        "ONEMKL_VERBOSE": "0",
+        "ROCBLAS_LAYER": "0",
+        "ROCBLAS_LOG_TRACE_PATH": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "SYCL_PI_TRACE": "0",
+        "UR_LOG_LOADER": "level:quiet"
+      },
+      "hello": {
+        "payload": {
+          "app_version": "0.1.0",
+          "backend": "cuda",
+          "compiler": "195136260",
+          "loaded_modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+          ],
+          "os": {
+            "architecture": "x64",
+            "build": 26300,
+            "major": 10,
+            "minor": 0,
+            "name": "Windows"
+          },
+          "pointer_bits": 64,
+          "protocol_version": 1
+        },
+        "protocol_version": 1,
+        "request_id": 0,
+        "type": "hello"
+      },
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+      "runtime": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+          "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "C:\\WINDOWS\\System32\\msvcrt.dll",
+          "C:\\WINDOWS\\System32\\sechost.dll",
+          "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "C:\\WINDOWS\\System32\\gdi32.dll",
+          "C:\\WINDOWS\\System32\\win32u.dll",
+          "C:\\WINDOWS\\System32\\gdi32full.dll",
+          "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "C:\\WINDOWS\\System32\\USER32.dll",
+          "C:\\WINDOWS\\System32\\IMM32.DLL",
+          "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+          "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+          "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+          "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+          "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+          "C:\\WINDOWS\\System32\\CRYPT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+          "C:\\WINDOWS\\System32\\combase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+          "C:\\WINDOWS\\System32\\Shell32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+          "C:\\WINDOWS\\System32\\SHCORE.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+          "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+          "C:\\WINDOWS\\System32\\ole32.dll",
+          "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+          "C:\\WINDOWS\\System32\\wintrust.dll",
+          "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+          "C:\\WINDOWS\\system32\\rsaenh.dll",
+          "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll"
+        ],
+        "os": {
+          "architecture": "x64",
+          "build": 26300,
+          "major": 10,
+          "minor": 0,
+          "name": "Windows"
+        },
+        "pointer_bits": 64,
+        "protocol_version": 1
+      }
+    }
+  },
+  "build": {
+    "app_version": "0.1.0",
+    "compiler": "195136260",
+    "loaded_modules": [
+      "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+      "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+    ],
+    "pointer_bits": 64,
+    "protocol_version": 1
+  },
+  "command_line": "\"G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe\" run --backend cuda --device nvidia:0 --suite gemm --dtype fp8 --sizes 1024,2048,4096 --json results/cuda-fp8-scaled.json --csv results/cuda-fp8-scaled.csv",
+  "devices": [
+    {
+      "alias": "nvidia:0",
+      "architecture": "sm_120",
+      "backend": "cuda",
+      "backend_index": 0,
+      "best_effort": false,
+      "compute_capability": {
+        "major": 12,
+        "minor": 0
+      },
+      "device_id": null,
+      "id": "cuda:9510a92114f7034232ae2924c362def1",
+      "identity": {
+        "luid": "6d0c010000000000",
+        "luid_node_mask": 1,
+        "pci_bus_id": "0000:01:00.0",
+        "uuid": "9510a92114f7034232ae2924c362def1"
+      },
+      "integrated": false,
+      "memory_bytes": 17066033152,
+      "multiprocessor_count": 70,
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "vendor_id": 4318
+    }
+  ],
+  "results": [
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "ready",
+      "best_ms": 49.315582275390625,
+      "best_tflops": 178.3633613629137,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+          "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "C:\\WINDOWS\\System32\\msvcrt.dll",
+          "C:\\WINDOWS\\System32\\sechost.dll",
+          "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "C:\\WINDOWS\\System32\\gdi32.dll",
+          "C:\\WINDOWS\\System32\\win32u.dll",
+          "C:\\WINDOWS\\System32\\gdi32full.dll",
+          "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "C:\\WINDOWS\\System32\\USER32.dll",
+          "C:\\WINDOWS\\System32\\IMM32.DLL",
+          "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+          "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+          "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+          "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+          "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+          "C:\\WINDOWS\\System32\\CRYPT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+          "C:\\WINDOWS\\System32\\combase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+          "C:\\WINDOWS\\System32\\Shell32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+          "C:\\WINDOWS\\System32\\SHCORE.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+          "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+          "C:\\WINDOWS\\System32\\ole32.dll",
+          "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+          "C:\\WINDOWS\\System32\\wintrust.dll",
+          "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+          "C:\\WINDOWS\\system32\\rsaenh.dll",
+          "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll"
+        ],
+        "os": {
+          "architecture": "x64",
+          "build": 26300,
+          "major": 10,
+          "minor": 0,
+          "name": "Windows"
+        },
+        "pointer_bits": 64,
+        "protocol_version": 1,
+        "runtime": {
+          "cuBLASLt": 130401,
+          "cuda_compile_baseline": "13.2.86",
+          "cuda_driver_api": 13040,
+          "cuda_runtime": 13020,
+          "math_environment": {
+            "CUBLASLT_LOG_LEVEL": "0",
+            "CUBLAS_EMULATE_SINGLE_PRECISION": "0",
+            "CUBLAS_LOGINFO_DBG": "0",
+            "NVIDIA_TF32_OVERRIDE": "0"
+          },
+          "modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+            "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "C:\\WINDOWS\\System32\\msvcrt.dll",
+            "C:\\WINDOWS\\System32\\sechost.dll",
+            "C:\\WINDOWS\\System32\\RPCRT4.dll",
+            "C:\\WINDOWS\\System32\\gdi32.dll",
+            "C:\\WINDOWS\\System32\\win32u.dll",
+            "C:\\WINDOWS\\System32\\gdi32full.dll",
+            "C:\\WINDOWS\\System32\\msvcp_win.dll",
+            "C:\\WINDOWS\\System32\\ucrtbase.dll",
+            "C:\\WINDOWS\\System32\\USER32.dll",
+            "C:\\WINDOWS\\System32\\IMM32.DLL",
+            "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+            "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+            "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+            "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+            "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+            "C:\\WINDOWS\\System32\\CRYPT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+            "C:\\WINDOWS\\System32\\combase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+            "C:\\WINDOWS\\System32\\Shell32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+            "C:\\WINDOWS\\System32\\SHCORE.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+            "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+            "C:\\WINDOWS\\System32\\ole32.dll",
+            "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+            "C:\\WINDOWS\\System32\\wintrust.dll",
+            "C:\\WINDOWS\\System32\\imagehlp.dll",
+            "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+            "C:\\WINDOWS\\system32\\rsaenh.dll",
+            "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+            "C:\\WINDOWS\\System32\\WS2_32.dll",
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+          ]
+        }
+      },
+      "calibration_linearity": [
+        {
+          "elapsed_ms": 0.012992000207304955,
+          "flops": 2147483648,
+          "repetitions": 1,
+          "wall_ms": 0.0931
+        },
+        {
+          "elapsed_ms": 0.030527999624609947,
+          "flops": 4294967296,
+          "repetitions": 2,
+          "wall_ms": 0.0393
+        },
+        {
+          "elapsed_ms": 0.06601600348949432,
+          "flops": 8589934592,
+          "repetitions": 4,
+          "wall_ms": 0.0709
+        },
+        {
+          "elapsed_ms": 0.09331200271844864,
+          "flops": 17179869184,
+          "repetitions": 8,
+          "wall_ms": 0.0976
+        }
+      ],
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "actual_warmup_ms": 507.3449897766113,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 0,
+              "median_ms": 0.01740800030529499,
+              "tuning_sample_times_ms": [
+                0.01744000054895878,
+                0.01648000068962574,
+                0.01740800030529499
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.016095999628305435,
+              "tuning_sample_times_ms": [
+                0.016095999628305435,
+                0.01603199914097786,
+                0.016095999628305435
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.01788800023496151,
+              "tuning_sample_times_ms": [
+                0.018239999189972878,
+                0.01788800023496151,
+                0.017535999417304993
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.017503999173641205,
+              "tuning_sample_times_ms": [
+                0.017503999173641205,
+                0.01820800080895424,
+                0.01711999997496605
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 4,
+              "median_ms": 0.018271999433636665,
+              "tuning_sample_times_ms": [
+                0.018271999433636665,
+                0.017823999747633934,
+                0.019680000841617584
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 5,
+              "median_ms": 0.020096000283956528,
+              "tuning_sample_times_ms": [
+                0.020128000527620316,
+                0.020096000283956528,
+                0.019999999552965164
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 6,
+              "median_ms": 0.024000000208616257,
+              "tuning_sample_times_ms": [
+                0.022911999374628067,
+                0.024000000208616257,
+                0.027168000116944313
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 7,
+              "median_ms": 0.027264000847935677,
+              "tuning_sample_times_ms": [
+                0.027264000847935677,
+                0.027103999629616737,
+                0.02828799933195114
+              ],
+              "workspace_bytes": 4195487
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 47.34128189086914,
+            "repetitions": 4096,
+            "wall_ms": 47.3472
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.01600000075995922,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 1024,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 1024,
+        "ldb": 1024,
+        "ldc": 1024,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "m": 1024,
+        "n": 1024,
+        "native_only": true,
+        "physical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "repetitions": 4096,
+        "requested_allocation_bytes": 278921224,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500.0,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "alias": "nvidia:0",
+        "architecture": "sm_120",
+        "backend": "cuda",
+        "backend_index": 0,
+        "best_effort": false,
+        "compute_capability": {
+          "major": 12,
+          "minor": 0
+        },
+        "device_id": null,
+        "id": "cuda:9510a92114f7034232ae2924c362def1",
+        "identity": {
+          "luid": "6d0c010000000000",
+          "luid_node_mask": 1,
+          "pci_bus_id": "0000:01:00.0",
+          "uuid": "9510a92114f7034232ae2924c362def1"
+        },
+        "integrated": false,
+        "memory_bytes": 17066033152,
+        "multiprocessor_count": 70,
+        "name": "NVIDIA GeForce RTX 5070 Ti",
+        "vendor_id": 4318
+      },
+      "error_metrics": {
+        "post_measurement": [
+          {
+            "checksum": -3851.8704233169556,
+            "full_matrix": false,
+            "max_absolute_error": 9.5367431640625e-07,
+            "max_error_over_sum_abs": 1.6354820232370823e-09,
+            "max_relative_error": 2.8705919083008934e-08,
+            "max_unscaled_reference_error": 26.692405700683594,
+            "nonzero_elements": 1048575,
+            "quantization_error": {
+              "elements": 2097152,
+              "max_absolute": 0.06249988079071045,
+              "rms": 0.022100344940794374
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 1024,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.00024415552707074406
+            },
+            "unscaled_reference_rejected_elements": 126
+          }
+        ],
+        "pre_measurement": [
+          {
+            "case": "exact_signed_non_square",
+            "checksum": -13.787109375,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 0.4163818359375,
+            "nonzero_elements": 391,
+            "quantization_error": {
+              "elements": 760,
+              "max_absolute": 0.015625,
+              "rms": 0.006660775710600097
+            },
+            "sampled_elements": 391,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 19,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 4.5299581330540495e-06
+            },
+            "unscaled_reference_rejected_elements": 391
+          },
+          {
+            "case": "random_signed_non_square",
+            "checksum": 95.23140335083008,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 5.487457275390625,
+            "nonzero_elements": 589,
+            "quantization_error": {
+              "elements": 1850,
+              "max_absolute": 0.062340736389160156,
+              "rms": 0.022480568436947734
+            },
+            "sampled_elements": 589,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 37,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 8.821506881460823e-06
+            },
+            "unscaled_reference_rejected_elements": 589
+          },
+          {
+            "checksum": -3851.8704233169556,
+            "full_matrix": false,
+            "max_absolute_error": 9.5367431640625e-07,
+            "max_error_over_sum_abs": 1.6354820232370823e-09,
+            "max_relative_error": 2.8705919083008934e-08,
+            "max_unscaled_reference_error": 26.692405700683594,
+            "nonzero_elements": 1048575,
+            "quantization_error": {
+              "elements": 2097152,
+              "max_absolute": 0.06249988079071045,
+              "rms": 0.022100344940794374
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 1024,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.00024415552707074406
+            },
+            "unscaled_reference_rejected_elements": 126
+          }
+        ]
+      },
+      "git_commit": null,
+      "hardware_support": "supported",
+      "implementation": "native",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 1034.5992965698242,
+      "median_ms": 51.76136016845703,
+      "median_tflops": 169.93550775291007,
+      "native_evidence": [
+        {
+          "api": "cublasLtMatmul",
+          "compute_type": "CUBLAS_COMPUTE_32F",
+          "kind": "documented_api_path",
+          "profiler_checked": false,
+          "reference": "https://docs.nvidia.com/cuda/archive/13.2.0/cublas/index.html"
+        }
+      ],
+      "noisy": true,
+      "output": "fp32",
+      "raw_samples": [
+        {
+          "elapsed_ms": 51.738399505615234,
+          "flops": 8796093022208,
+          "index": 0,
+          "repetitions": 4096,
+          "wall_ms": 51.7668
+        },
+        {
+          "elapsed_ms": 49.315582275390625,
+          "flops": 8796093022208,
+          "index": 1,
+          "repetitions": 4096,
+          "wall_ms": 49.3373
+        },
+        {
+          "elapsed_ms": 51.78432083129883,
+          "flops": 8796093022208,
+          "index": 2,
+          "repetitions": 4096,
+          "wall_ms": 51.8074
+        },
+        {
+          "elapsed_ms": 51.408607482910156,
+          "flops": 8796093022208,
+          "index": 3,
+          "repetitions": 4096,
+          "wall_ms": 51.4238
+        },
+        {
+          "elapsed_ms": 50.48588943481445,
+          "flops": 8796093022208,
+          "index": 4,
+          "repetitions": 4096,
+          "wall_ms": 50.5057
+        },
+        {
+          "elapsed_ms": 51.873409271240234,
+          "flops": 8796093022208,
+          "index": 5,
+          "repetitions": 4096,
+          "wall_ms": 51.8961
+        },
+        {
+          "elapsed_ms": 54.68761444091797,
+          "flops": 8796093022208,
+          "index": 6,
+          "repetitions": 4096,
+          "wall_ms": 54.7028
+        },
+        {
+          "elapsed_ms": 50.482688903808594,
+          "flops": 8796093022208,
+          "index": 7,
+          "repetitions": 4096,
+          "wall_ms": 50.495
+        },
+        {
+          "elapsed_ms": 51.370174407958984,
+          "flops": 8796093022208,
+          "index": 8,
+          "repetitions": 4096,
+          "wall_ms": 51.3875
+        },
+        {
+          "elapsed_ms": 52.45759963989258,
+          "flops": 8796093022208,
+          "index": 9,
+          "repetitions": 4096,
+          "wall_ms": 52.6687
+        },
+        {
+          "elapsed_ms": 50.1399040222168,
+          "flops": 8796093022208,
+          "index": 10,
+          "repetitions": 4096,
+          "wall_ms": 50.1479
+        },
+        {
+          "elapsed_ms": 51.931297302246094,
+          "flops": 8796093022208,
+          "index": 11,
+          "repetitions": 4096,
+          "wall_ms": 51.9453
+        },
+        {
+          "elapsed_ms": 52.602752685546875,
+          "flops": 8796093022208,
+          "index": 12,
+          "repetitions": 4096,
+          "wall_ms": 52.6156
+        },
+        {
+          "elapsed_ms": 55.12579345703125,
+          "flops": 8796093022208,
+          "index": 13,
+          "repetitions": 4096,
+          "wall_ms": 55.1513
+        },
+        {
+          "elapsed_ms": 52.778846740722656,
+          "flops": 8796093022208,
+          "index": 14,
+          "repetitions": 4096,
+          "wall_ms": 52.8059
+        },
+        {
+          "elapsed_ms": 53.807647705078125,
+          "flops": 8796093022208,
+          "index": 15,
+          "repetitions": 4096,
+          "wall_ms": 53.8248
+        },
+        {
+          "elapsed_ms": 50.41254425048828,
+          "flops": 8796093022208,
+          "index": 16,
+          "repetitions": 4096,
+          "wall_ms": 50.4314
+        },
+        {
+          "elapsed_ms": 49.32851028442383,
+          "flops": 8796093022208,
+          "index": 17,
+          "repetitions": 4096,
+          "wall_ms": 49.3424
+        },
+        {
+          "elapsed_ms": 53.465248107910156,
+          "flops": 8796093022208,
+          "index": 18,
+          "repetitions": 4096,
+          "wall_ms": 53.4777
+        },
+        {
+          "elapsed_ms": 49.4024658203125,
+          "flops": 8796093022208,
+          "index": 19,
+          "repetitions": 4096,
+          "wall_ms": 49.4156
+        }
+      ],
+      "reason_code": "ok",
+      "reason_message": "",
+      "reference_kind": "cpu_long_double_dot_actual_quantized_scaled_inputs",
+      "result_status": "ok",
+      "sample_times_ms": [
+        51.738399505615234,
+        49.315582275390625,
+        51.78432083129883,
+        51.408607482910156,
+        50.48588943481445,
+        51.873409271240234,
+        54.68761444091797,
+        50.482688903808594,
+        51.370174407958984,
+        52.45759963989258,
+        50.1399040222168,
+        51.931297302246094,
+        52.602752685546875,
+        55.12579345703125,
+        52.778846740722656,
+        53.807647705078125,
+        50.41254425048828,
+        49.32851028442383,
+        53.465248107910156,
+        49.4024658203125
+      ],
+      "sampled_elements": 128,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": "device_elapsed_batch",
+      "timing_source": "cuda_events",
+      "tolerance_policy": {
+        "K": 1024,
+        "absolute_floor": 1e-06,
+        "dtype": "fp8",
+        "id": "dot-forward-error-v1",
+        "relative": 2.384185791015625e-07,
+        "sum_abs_factor": 0.00024415552707074406
+      },
+      "validation_status": "passed",
+      "wall_ms": 1590.7307
+    },
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "ready",
+      "best_ms": 75.07263946533203,
+      "best_tflops": 294.52130359714414,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+          "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "C:\\WINDOWS\\System32\\msvcrt.dll",
+          "C:\\WINDOWS\\System32\\sechost.dll",
+          "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "C:\\WINDOWS\\System32\\gdi32.dll",
+          "C:\\WINDOWS\\System32\\win32u.dll",
+          "C:\\WINDOWS\\System32\\gdi32full.dll",
+          "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "C:\\WINDOWS\\System32\\USER32.dll",
+          "C:\\WINDOWS\\System32\\IMM32.DLL",
+          "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+          "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+          "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+          "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+          "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+          "C:\\WINDOWS\\System32\\CRYPT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+          "C:\\WINDOWS\\System32\\combase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+          "C:\\WINDOWS\\System32\\Shell32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+          "C:\\WINDOWS\\System32\\SHCORE.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+          "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+          "C:\\WINDOWS\\System32\\ole32.dll",
+          "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+          "C:\\WINDOWS\\System32\\wintrust.dll",
+          "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+          "C:\\WINDOWS\\system32\\rsaenh.dll",
+          "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+          "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+        ],
+        "os": {
+          "architecture": "x64",
+          "build": 26300,
+          "major": 10,
+          "minor": 0,
+          "name": "Windows"
+        },
+        "pointer_bits": 64,
+        "protocol_version": 1,
+        "runtime": {
+          "cuBLASLt": 130401,
+          "cuda_compile_baseline": "13.2.86",
+          "cuda_driver_api": 13040,
+          "cuda_runtime": 13020,
+          "math_environment": {
+            "CUBLASLT_LOG_LEVEL": "0",
+            "CUBLAS_EMULATE_SINGLE_PRECISION": "0",
+            "CUBLAS_LOGINFO_DBG": "0",
+            "NVIDIA_TF32_OVERRIDE": "0"
+          },
+          "modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+            "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "C:\\WINDOWS\\System32\\msvcrt.dll",
+            "C:\\WINDOWS\\System32\\sechost.dll",
+            "C:\\WINDOWS\\System32\\RPCRT4.dll",
+            "C:\\WINDOWS\\System32\\gdi32.dll",
+            "C:\\WINDOWS\\System32\\win32u.dll",
+            "C:\\WINDOWS\\System32\\gdi32full.dll",
+            "C:\\WINDOWS\\System32\\msvcp_win.dll",
+            "C:\\WINDOWS\\System32\\ucrtbase.dll",
+            "C:\\WINDOWS\\System32\\USER32.dll",
+            "C:\\WINDOWS\\System32\\IMM32.DLL",
+            "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+            "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+            "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+            "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+            "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+            "C:\\WINDOWS\\System32\\CRYPT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+            "C:\\WINDOWS\\System32\\combase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+            "C:\\WINDOWS\\System32\\Shell32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+            "C:\\WINDOWS\\System32\\SHCORE.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+            "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+            "C:\\WINDOWS\\System32\\ole32.dll",
+            "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+            "C:\\WINDOWS\\System32\\wintrust.dll",
+            "C:\\WINDOWS\\System32\\imagehlp.dll",
+            "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+            "C:\\WINDOWS\\system32\\rsaenh.dll",
+            "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+            "C:\\WINDOWS\\System32\\WS2_32.dll",
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+          ]
+        }
+      },
+      "calibration_linearity": [
+        {
+          "elapsed_ms": 0.05423999950289726,
+          "flops": 17179869184,
+          "repetitions": 1,
+          "wall_ms": 0.1724
+        },
+        {
+          "elapsed_ms": 0.11820799857378006,
+          "flops": 34359738368,
+          "repetitions": 2,
+          "wall_ms": 0.145
+        },
+        {
+          "elapsed_ms": 0.21385599672794342,
+          "flops": 68719476736,
+          "repetitions": 4,
+          "wall_ms": 0.3308
+        },
+        {
+          "elapsed_ms": 0.42953601479530334,
+          "flops": 137438953472,
+          "repetitions": 8,
+          "wall_ms": 0.4354
+        }
+      ],
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "actual_warmup_ms": 541.6598739624023,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 0,
+              "median_ms": 0.06697600334882736,
+              "tuning_sample_times_ms": [
+                0.06697600334882736,
+                0.06716799736022949,
+                0.066880002617836
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.06524799764156342,
+              "tuning_sample_times_ms": [
+                0.06515199691057205,
+                0.06719999760389328,
+                0.06524799764156342
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.059007998555898666,
+              "tuning_sample_times_ms": [
+                0.059007998555898666,
+                0.05897599831223488,
+                0.059167999774217606
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.05881600081920624,
+              "tuning_sample_times_ms": [
+                0.05881600081920624,
+                0.05846399813890457,
+                0.05894400179386139
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 4,
+              "median_ms": 0.07939200103282928,
+              "tuning_sample_times_ms": [
+                0.07744000107049942,
+                0.07945600152015686,
+                0.07939200103282928
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 5,
+              "median_ms": 0.07897599786520004,
+              "tuning_sample_times_ms": [
+                0.07958400249481201,
+                0.07683199644088745,
+                0.07897599786520004
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 6,
+              "median_ms": 0.10265599936246872,
+              "tuning_sample_times_ms": [
+                0.09891200065612793,
+                0.11945600062608719,
+                0.10265599936246872
+              ],
+              "workspace_bytes": 16781471
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 7,
+              "median_ms": 0.10831999778747559,
+              "tuning_sample_times_ms": [
+                0.10831999778747559,
+                0.11017599701881409,
+                0.10784000158309937
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 72.3326416015625,
+            "repetitions": 1287,
+            "wall_ms": 72.3425
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.07769600301980972,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 2048,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 2048,
+        "ldb": 2048,
+        "ldc": 2048,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "m": 2048,
+        "n": 2048,
+        "native_only": true,
+        "physical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "repetitions": 1287,
+        "requested_allocation_bytes": 310378504,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500.0,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "alias": "nvidia:0",
+        "architecture": "sm_120",
+        "backend": "cuda",
+        "backend_index": 0,
+        "best_effort": false,
+        "compute_capability": {
+          "major": 12,
+          "minor": 0
+        },
+        "device_id": null,
+        "id": "cuda:9510a92114f7034232ae2924c362def1",
+        "identity": {
+          "luid": "6d0c010000000000",
+          "luid_node_mask": 1,
+          "pci_bus_id": "0000:01:00.0",
+          "uuid": "9510a92114f7034232ae2924c362def1"
+        },
+        "integrated": false,
+        "memory_bytes": 17066033152,
+        "multiprocessor_count": 70,
+        "name": "NVIDIA GeForce RTX 5070 Ti",
+        "vendor_id": 4318
+      },
+      "error_metrics": {
+        "post_measurement": [
+          {
+            "checksum": 127139.19871902466,
+            "full_matrix": false,
+            "max_absolute_error": 4.76837158203125e-06,
+            "max_error_over_sum_abs": 4.0252829989502165e-09,
+            "max_relative_error": 7.091539822775895e-08,
+            "max_unscaled_reference_error": 28.995323181152344,
+            "nonzero_elements": 4194303,
+            "quantization_error": {
+              "elements": 8388608,
+              "max_absolute": 0.0625,
+              "rms": 0.022095087476655444
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 2048,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.0004883408619216213
+            },
+            "unscaled_reference_rejected_elements": 123
+          }
+        ],
+        "pre_measurement": [
+          {
+            "case": "exact_signed_non_square",
+            "checksum": -13.787109375,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 0.4163818359375,
+            "nonzero_elements": 391,
+            "quantization_error": {
+              "elements": 760,
+              "max_absolute": 0.015625,
+              "rms": 0.006660775710600097
+            },
+            "sampled_elements": 391,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 19,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 4.5299581330540495e-06
+            },
+            "unscaled_reference_rejected_elements": 391
+          },
+          {
+            "case": "random_signed_non_square",
+            "checksum": 95.23140335083008,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 5.487457275390625,
+            "nonzero_elements": 589,
+            "quantization_error": {
+              "elements": 1850,
+              "max_absolute": 0.062340736389160156,
+              "rms": 0.022480568436947734
+            },
+            "sampled_elements": 589,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 37,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 8.821506881460823e-06
+            },
+            "unscaled_reference_rejected_elements": 589
+          },
+          {
+            "checksum": 127139.19871902466,
+            "full_matrix": false,
+            "max_absolute_error": 4.76837158203125e-06,
+            "max_error_over_sum_abs": 4.0252829989502165e-09,
+            "max_relative_error": 7.091539822775895e-08,
+            "max_unscaled_reference_error": 28.995323181152344,
+            "nonzero_elements": 4194303,
+            "quantization_error": {
+              "elements": 8388608,
+              "max_absolute": 0.0625,
+              "rms": 0.022095087476655444
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 2048,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.0004883408619216213
+            },
+            "unscaled_reference_rejected_elements": 123
+          }
+        ]
+      },
+      "git_commit": null,
+      "hardware_support": "supported",
+      "implementation": "native",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 1068.654655456543,
+      "median_ms": 75.33516693115234,
+      "median_tflops": 293.49495780655053,
+      "native_evidence": [
+        {
+          "api": "cublasLtMatmul",
+          "compute_type": "CUBLAS_COMPUTE_32F",
+          "kind": "documented_api_path",
+          "profiler_checked": false,
+          "reference": "https://docs.nvidia.com/cuda/archive/13.2.0/cublas/index.html"
+        }
+      ],
+      "noisy": false,
+      "output": "fp32",
+      "raw_samples": [
+        {
+          "elapsed_ms": 75.28502655029297,
+          "flops": 22110491639808,
+          "index": 0,
+          "repetitions": 1287,
+          "wall_ms": 75.3075
+        },
+        {
+          "elapsed_ms": 75.2339859008789,
+          "flops": 22110491639808,
+          "index": 1,
+          "repetitions": 1287,
+          "wall_ms": 75.2569
+        },
+        {
+          "elapsed_ms": 75.95833587646484,
+          "flops": 22110491639808,
+          "index": 2,
+          "repetitions": 1287,
+          "wall_ms": 75.9859
+        },
+        {
+          "elapsed_ms": 75.323486328125,
+          "flops": 22110491639808,
+          "index": 3,
+          "repetitions": 1287,
+          "wall_ms": 75.3493
+        },
+        {
+          "elapsed_ms": 75.75587463378906,
+          "flops": 22110491639808,
+          "index": 4,
+          "repetitions": 1287,
+          "wall_ms": 75.7809
+        },
+        {
+          "elapsed_ms": 76.17711639404297,
+          "flops": 22110491639808,
+          "index": 5,
+          "repetitions": 1287,
+          "wall_ms": 76.2036
+        },
+        {
+          "elapsed_ms": 75.34684753417969,
+          "flops": 22110491639808,
+          "index": 6,
+          "repetitions": 1287,
+          "wall_ms": 75.5624
+        },
+        {
+          "elapsed_ms": 75.2080307006836,
+          "flops": 22110491639808,
+          "index": 7,
+          "repetitions": 1287,
+          "wall_ms": 75.2339
+        },
+        {
+          "elapsed_ms": 75.23497772216797,
+          "flops": 22110491639808,
+          "index": 8,
+          "repetitions": 1287,
+          "wall_ms": 75.2594
+        },
+        {
+          "elapsed_ms": 75.76019287109375,
+          "flops": 22110491639808,
+          "index": 9,
+          "repetitions": 1287,
+          "wall_ms": 75.7864
+        },
+        {
+          "elapsed_ms": 75.2066879272461,
+          "flops": 22110491639808,
+          "index": 10,
+          "repetitions": 1287,
+          "wall_ms": 75.3697
+        },
+        {
+          "elapsed_ms": 75.07263946533203,
+          "flops": 22110491639808,
+          "index": 11,
+          "repetitions": 1287,
+          "wall_ms": 75.1005
+        },
+        {
+          "elapsed_ms": 81.27110290527344,
+          "flops": 22110491639808,
+          "index": 12,
+          "repetitions": 1287,
+          "wall_ms": 81.2978
+        },
+        {
+          "elapsed_ms": 81.82035064697266,
+          "flops": 22110491639808,
+          "index": 13,
+          "repetitions": 1287,
+          "wall_ms": 81.8422
+        }
+      ],
+      "reason_code": "ok",
+      "reason_message": "",
+      "reference_kind": "cpu_long_double_dot_actual_quantized_scaled_inputs",
+      "result_status": "ok",
+      "sample_times_ms": [
+        75.28502655029297,
+        75.2339859008789,
+        75.95833587646484,
+        75.323486328125,
+        75.75587463378906,
+        76.17711639404297,
+        75.34684753417969,
+        75.2080307006836,
+        75.23497772216797,
+        75.76019287109375,
+        75.2066879272461,
+        75.07263946533203,
+        81.27110290527344,
+        81.82035064697266
+      ],
+      "sampled_elements": 128,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": "device_elapsed_batch",
+      "timing_source": "cuda_events",
+      "tolerance_policy": {
+        "K": 2048,
+        "absolute_floor": 1e-06,
+        "dtype": "fp8",
+        "id": "dot-forward-error-v1",
+        "relative": 2.384185791015625e-07,
+        "sum_abs_factor": 0.0004883408619216213
+      },
+      "validation_status": "passed",
+      "wall_ms": 1684.9247
+    },
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "ready",
+      "best_ms": 112.07894134521484,
+      "best_tflops": 315.1511837849104,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+          "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "C:\\WINDOWS\\System32\\msvcrt.dll",
+          "C:\\WINDOWS\\System32\\sechost.dll",
+          "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "C:\\WINDOWS\\System32\\gdi32.dll",
+          "C:\\WINDOWS\\System32\\win32u.dll",
+          "C:\\WINDOWS\\System32\\gdi32full.dll",
+          "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "C:\\WINDOWS\\System32\\USER32.dll",
+          "C:\\WINDOWS\\System32\\IMM32.DLL",
+          "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+          "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+          "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+          "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+          "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+          "C:\\WINDOWS\\System32\\CRYPT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+          "C:\\WINDOWS\\System32\\combase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+          "C:\\WINDOWS\\System32\\Shell32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+          "C:\\WINDOWS\\System32\\SHCORE.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+          "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+          "C:\\WINDOWS\\System32\\ole32.dll",
+          "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+          "C:\\WINDOWS\\System32\\wintrust.dll",
+          "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+          "C:\\WINDOWS\\system32\\rsaenh.dll",
+          "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+          "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+        ],
+        "os": {
+          "architecture": "x64",
+          "build": 26300,
+          "major": 10,
+          "minor": 0,
+          "name": "Windows"
+        },
+        "pointer_bits": 64,
+        "protocol_version": 1,
+        "runtime": {
+          "cuBLASLt": 130401,
+          "cuda_compile_baseline": "13.2.86",
+          "cuda_driver_api": 13040,
+          "cuda_runtime": 13020,
+          "math_environment": {
+            "CUBLASLT_LOG_LEVEL": "0",
+            "CUBLAS_EMULATE_SINGLE_PRECISION": "0",
+            "CUBLAS_LOGINFO_DBG": "0",
+            "NVIDIA_TF32_OVERRIDE": "0"
+          },
+          "modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+            "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "C:\\WINDOWS\\System32\\msvcrt.dll",
+            "C:\\WINDOWS\\System32\\sechost.dll",
+            "C:\\WINDOWS\\System32\\RPCRT4.dll",
+            "C:\\WINDOWS\\System32\\gdi32.dll",
+            "C:\\WINDOWS\\System32\\win32u.dll",
+            "C:\\WINDOWS\\System32\\gdi32full.dll",
+            "C:\\WINDOWS\\System32\\msvcp_win.dll",
+            "C:\\WINDOWS\\System32\\ucrtbase.dll",
+            "C:\\WINDOWS\\System32\\USER32.dll",
+            "C:\\WINDOWS\\System32\\IMM32.DLL",
+            "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+            "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+            "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+            "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+            "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+            "C:\\WINDOWS\\System32\\CRYPT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+            "C:\\WINDOWS\\System32\\combase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+            "C:\\WINDOWS\\System32\\Shell32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+            "C:\\WINDOWS\\System32\\SHCORE.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+            "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+            "C:\\WINDOWS\\System32\\ole32.dll",
+            "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+            "C:\\WINDOWS\\System32\\wintrust.dll",
+            "C:\\WINDOWS\\System32\\imagehlp.dll",
+            "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+            "C:\\WINDOWS\\system32\\rsaenh.dll",
+            "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+            "C:\\WINDOWS\\System32\\WS2_32.dll",
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+          ]
+        }
+      },
+      "calibration_linearity": [
+        {
+          "elapsed_ms": 0.39164799451828003,
+          "flops": 137438953472,
+          "repetitions": 1,
+          "wall_ms": 0.482
+        },
+        {
+          "elapsed_ms": 0.7937920093536377,
+          "flops": 274877906944,
+          "repetitions": 2,
+          "wall_ms": 0.8018
+        },
+        {
+          "elapsed_ms": 1.5677440166473389,
+          "flops": 549755813888,
+          "repetitions": 4,
+          "wall_ms": 1.7761
+        },
+        {
+          "elapsed_ms": 3.5776960849761963,
+          "flops": 1099511627776,
+          "repetitions": 8,
+          "wall_ms": 3.5859
+        }
+      ],
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "actual_warmup_ms": 567.0243606567383,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 0,
+              "median_ms": 0.6431360244750977,
+              "tuning_sample_times_ms": [
+                1.084831953048706,
+                0.6431360244750977,
+                0.640064001083374
+              ],
+              "workspace_bytes": 67117215
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.3967680037021637,
+              "tuning_sample_times_ms": [
+                0.3967680037021637,
+                0.39475199580192566,
+                0.5530239939689636
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.45049598813056946,
+              "tuning_sample_times_ms": [
+                0.44755199551582336,
+                0.45049598813056946,
+                0.7478079795837402
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.7013440132141113,
+              "tuning_sample_times_ms": [
+                0.5665919780731201,
+                0.7807679772377014,
+                0.7013440132141113
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 4,
+              "median_ms": 0.8403199911117554,
+              "tuning_sample_times_ms": [
+                0.8403199911117554,
+                0.7432640194892883,
+                1.015712022781372
+              ],
+              "workspace_bytes": 67125407
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 5,
+              "median_ms": 0.8909119963645935,
+              "tuning_sample_times_ms": [
+                0.8909119963645935,
+                0.8870400190353394,
+                0.898751974105835
+              ],
+              "workspace_bytes": 67141791
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 6,
+              "median_ms": 0.7878400087356567,
+              "tuning_sample_times_ms": [
+                0.7897599935531616,
+                0.7868160009384155,
+                0.7878400087356567
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 7,
+              "median_ms": 0.906495988368988,
+              "tuning_sample_times_ms": [
+                0.8848959803581238,
+                0.9219520092010498,
+                0.906495988368988
+              ],
+              "workspace_bytes": 134316191
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 116.41801452636719,
+            "repetitions": 257,
+            "wall_ms": 116.4295
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.3882879912853241,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 4096,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 4096,
+        "ldb": 4096,
+        "ldc": 4096,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "m": 4096,
+        "n": 4096,
+        "native_only": true,
+        "physical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "repetitions": 257,
+        "requested_allocation_bytes": 436207624,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500.0,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "alias": "nvidia:0",
+        "architecture": "sm_120",
+        "backend": "cuda",
+        "backend_index": 0,
+        "best_effort": false,
+        "compute_capability": {
+          "major": 12,
+          "minor": 0
+        },
+        "device_id": null,
+        "id": "cuda:9510a92114f7034232ae2924c362def1",
+        "identity": {
+          "luid": "6d0c010000000000",
+          "luid_node_mask": 1,
+          "pci_bus_id": "0000:01:00.0",
+          "uuid": "9510a92114f7034232ae2924c362def1"
+        },
+        "integrated": false,
+        "memory_bytes": 17066033152,
+        "multiprocessor_count": 70,
+        "name": "NVIDIA GeForce RTX 5070 Ti",
+        "vendor_id": 4318
+      },
+      "error_metrics": {
+        "post_measurement": [
+          {
+            "checksum": 182209.20830249786,
+            "full_matrix": false,
+            "max_absolute_error": 1.1444091796875e-05,
+            "max_error_over_sum_abs": 5.046036148369893e-09,
+            "max_relative_error": 3.870932279201055e-07,
+            "max_unscaled_reference_error": 48.288272857666016,
+            "nonzero_elements": 16777216,
+            "quantization_error": {
+              "elements": 33554432,
+              "max_absolute": 0.0625,
+              "rms": 0.022098842641900825
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 4096,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.0009768009768009768
+            },
+            "unscaled_reference_rejected_elements": 108
+          }
+        ],
+        "pre_measurement": [
+          {
+            "case": "exact_signed_non_square",
+            "checksum": -13.787109375,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 0.4163818359375,
+            "nonzero_elements": 391,
+            "quantization_error": {
+              "elements": 760,
+              "max_absolute": 0.015625,
+              "rms": 0.006660775710600097
+            },
+            "sampled_elements": 391,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 19,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 4.5299581330540495e-06
+            },
+            "unscaled_reference_rejected_elements": 391
+          },
+          {
+            "case": "random_signed_non_square",
+            "checksum": 95.23140335083008,
+            "full_matrix": true,
+            "max_absolute_error": 0.0,
+            "max_error_over_sum_abs": 0.0,
+            "max_relative_error": 0.0,
+            "max_unscaled_reference_error": 5.487457275390625,
+            "nonzero_elements": 589,
+            "quantization_error": {
+              "elements": 1850,
+              "max_absolute": 0.062340736389160156,
+              "rms": 0.022480568436947734
+            },
+            "sampled_elements": 589,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 37,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 8.821506881460823e-06
+            },
+            "unscaled_reference_rejected_elements": 589
+          },
+          {
+            "checksum": 182209.20830249786,
+            "full_matrix": false,
+            "max_absolute_error": 1.1444091796875e-05,
+            "max_error_over_sum_abs": 5.046036148369893e-09,
+            "max_relative_error": 3.870932279201055e-07,
+            "max_unscaled_reference_error": 48.288272857666016,
+            "nonzero_elements": 16777216,
+            "quantization_error": {
+              "elements": 33554432,
+              "max_absolute": 0.0625,
+              "rms": 0.022098842641900825
+            },
+            "sampled_elements": 128,
+            "scaled_reference_observable": true,
+            "tolerance_policy": {
+              "K": 4096,
+              "absolute_floor": 1e-06,
+              "dtype": "fp8",
+              "id": "dot-forward-error-v1",
+              "relative": 2.384185791015625e-07,
+              "sum_abs_factor": 0.0009768009768009768
+            },
+            "unscaled_reference_rejected_elements": 108
+          }
+        ]
+      },
+      "git_commit": null,
+      "hardware_support": "supported",
+      "implementation": "native",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 1062.7814636230469,
+      "median_ms": 113.45113372802734,
+      "median_tflops": 311.3394276603688,
+      "native_evidence": [
+        {
+          "api": "cublasLtMatmul",
+          "compute_type": "CUBLAS_COMPUTE_32F",
+          "kind": "documented_api_path",
+          "profiler_checked": false,
+          "reference": "https://docs.nvidia.com/cuda/archive/13.2.0/cublas/index.html"
+        }
+      ],
+      "noisy": true,
+      "output": "fp32",
+      "raw_samples": [
+        {
+          "elapsed_ms": 112.81059265136719,
+          "flops": 35321811042304,
+          "index": 0,
+          "repetitions": 257,
+          "wall_ms": 112.8564
+        },
+        {
+          "elapsed_ms": 112.07894134521484,
+          "flops": 35321811042304,
+          "index": 1,
+          "repetitions": 257,
+          "wall_ms": 112.1224
+        },
+        {
+          "elapsed_ms": 112.74610900878906,
+          "flops": 35321811042304,
+          "index": 2,
+          "repetitions": 257,
+          "wall_ms": 112.7737
+        },
+        {
+          "elapsed_ms": 112.42940521240234,
+          "flops": 35321811042304,
+          "index": 3,
+          "repetitions": 257,
+          "wall_ms": 112.5494
+        },
+        {
+          "elapsed_ms": 113.45113372802734,
+          "flops": 35321811042304,
+          "index": 4,
+          "repetitions": 257,
+          "wall_ms": 113.4874
+        },
+        {
+          "elapsed_ms": 123.92256164550781,
+          "flops": 35321811042304,
+          "index": 5,
+          "repetitions": 257,
+          "wall_ms": 123.966
+        },
+        {
+          "elapsed_ms": 125.80057525634766,
+          "flops": 35321811042304,
+          "index": 6,
+          "repetitions": 257,
+          "wall_ms": 125.8392
+        },
+        {
+          "elapsed_ms": 124.81372833251953,
+          "flops": 35321811042304,
+          "index": 7,
+          "repetitions": 257,
+          "wall_ms": 124.9406
+        },
+        {
+          "elapsed_ms": 124.7284164428711,
+          "flops": 35321811042304,
+          "index": 8,
+          "repetitions": 257,
+          "wall_ms": 124.7596
+        }
+      ],
+      "reason_code": "ok",
+      "reason_message": "",
+      "reference_kind": "cpu_long_double_dot_actual_quantized_scaled_inputs",
+      "result_status": "ok",
+      "sample_times_ms": [
+        112.81059265136719,
+        112.07894134521484,
+        112.74610900878906,
+        112.42940521240234,
+        113.45113372802734,
+        123.92256164550781,
+        125.80057525634766,
+        124.81372833251953,
+        124.7284164428711
+      ],
+      "sampled_elements": 128,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": "device_elapsed_batch",
+      "timing_source": "cuda_events",
+      "tolerance_policy": {
+        "K": 4096,
+        "absolute_floor": 1e-06,
+        "dtype": "fp8",
+        "id": "dot-forward-error-v1",
+        "relative": 2.384185791015625e-07,
+        "sum_abs_factor": 0.0009768009768009768
+      },
+      "validation_status": "passed",
+      "wall_ms": 1748.0418
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "cancelled": false,
+    "exit_code": 0,
+    "failed": false,
+    "ok": 3,
+    "unavailable": false
+  }
+}

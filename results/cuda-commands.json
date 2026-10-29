@@ -1,0 +1,23 @@
+[
+  {
+    "command": ".\\out\\Release\\gpubench.exe doctor --backend cuda --json results/cuda-doctor-final.json",
+    "exit_code": 0,
+    "started": "2026-10-20T23:17:45.9466694+08:00",
+    "finished": "2026-10-20T23:17:56.8579740+08:00",
+    "log": "results/cuda-doctor-final.log"
+  },
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite alu --dtype fp32,fp16 --json results/cuda-alu.json --csv results/cuda-alu.csv",
+    "exit_code": 0,
+    "started": "2026-10-20T23:17:56.8939429+08:00",
+    "finished": "2026-10-20T23:18:00.6570073+08:00",
+    "log": "results/cuda-alu.log"
+  },
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite gemm --dtype fp32,fp16,fp8 --sizes 1024,2048,4096 --json results/cuda-gemm.json --csv results/cuda-gemm.csv",
+    "exit_code": 0,
+    "started": "2026-10-20T23:18:00.6662984+08:00",
+    "finished": "2026-10-20T23:18:30.8785619+08:00",
+    "log": "results/cuda-gemm.log"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "package": "gpubench-cuda-0.1.0-win-x64.zip",
+    "sha256": "b07a39beef3a0c088faf399b3bf33c18c83205f4b372ec6b20554ea2c338161f",
+    "passed": true
+  },
+  {
+    "package": "gpubench-evidence-20261021.zip",
+    "sha256": "b7b0028117bb0b2290b1531cd16cf5e865c2d058dd3baba77b1251a1c8bbed80",
+    "passed": true
+  },
+  {
+    "package": "gpubench-host-0.1.0-win-x64.zip",
+    "sha256": "15e7a295fcf3015e1007c0335f950969bcc6541c42a2cfc8fdff33db94f5b2ba",
+    "passed": true
+  },
+  {
+    "package": "gpubench-opencl-0.1.0-win-x64.zip",
+    "sha256": "9c1cd6bd1f3b7876cdbbaa162ef3b445fa348bd368888f1f3d8d54e1b9c6e925",
+    "passed": true
+  },
+  {
+    "package": "gpubench-source-0.1.0.zip",
+    "sha256": "a260bb81da4529439c8a74f4822764a45a782f0c83bff71b9dcda4c2350b4d5d",
+    "passed": true
+  }
+]

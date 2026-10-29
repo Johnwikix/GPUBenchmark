@@ -1,0 +1,23 @@
+Microsoft (R) COFF/PE Dumper Version 14.51.36260.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file out\Release\workers\cuda\cuda_worker.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Image has the following dependencies:
+
+    KERNEL32.dll
+
+  Summary
+
+        9000 .data
+        1000 .fptable
+        1000 .nvFatBi
+       63000 .nv_fatb
+        9000 .pdata
+       36000 .rdata
+        2000 .reloc
+        1000 .rsrc
+       CE000 .text

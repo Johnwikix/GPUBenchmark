@@ -1,0 +1,4 @@
+#pragma once
+inline constexpr char gb_amd_compiler_version[]=R"GBAMD(@_amd_version@)GBAMD";
+inline constexpr char gb_amd_compiler_path[]=R"GBAMD(@GPUBENCH_AMD_COMPILER@)GBAMD";
+inline constexpr char gb_amd_compiled_architectures[]=R"GBAMD(@GPUBENCH_AMD_ARCHITECTURES@)GBAMD";

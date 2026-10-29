@@ -1,0 +1,394 @@
+{
+  "app_version": "0.1.0",
+  "backends": {
+    "cuda": {
+      "backend_status": "ready",
+      "effective_environment": {
+        "CUBLASLT_LOG_FILE": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "CUBLASLT_LOG_LEVEL": "0",
+        "CUBLASLT_LOG_MASK": "0",
+        "CUBLAS_COMPUTE_EMULATION_STRATEGY": "0",
+        "CUBLAS_LOGDEST_DBG": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "CUBLAS_LOGINFO_DBG": "0",
+        "DNNL_VERBOSE": "0",
+        "HIPBLASLT_LOG_FILE": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "HIPBLASLT_LOG_LEVEL": "0",
+        "HIPBLASLT_LOG_MASK": "0",
+        "MKL_VERBOSE": "0",
+        "NVIDIA_TF32_OVERRIDE": "0",
+        "ONEMKL_VERBOSE": "0",
+        "ROCBLAS_LAYER": "0",
+        "ROCBLAS_LOG_TRACE_PATH": "G:\\SoftwareProject\\console\\benchmark\\results\\logs\\cuda.library.log",
+        "SYCL_PI_TRACE": "0",
+        "UR_LOG_LOADER": "level:quiet"
+      },
+      "hello": {
+        "payload": {
+          "app_version": "0.1.0",
+          "backend": "cuda",
+          "compiler": "195136260",
+          "loaded_modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+          ],
+          "os": {
+            "architecture": "x64",
+            "build": 26300,
+            "major": 10,
+            "minor": 0,
+            "name": "Windows"
+          },
+          "pointer_bits": 64,
+          "protocol_version": 1
+        },
+        "protocol_version": 1,
+        "request_id": 0,
+        "type": "hello"
+      },
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+      "runtime": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+          "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "C:\\WINDOWS\\System32\\msvcrt.dll",
+          "C:\\WINDOWS\\System32\\sechost.dll",
+          "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "C:\\WINDOWS\\System32\\gdi32.dll",
+          "C:\\WINDOWS\\System32\\win32u.dll",
+          "C:\\WINDOWS\\System32\\gdi32full.dll",
+          "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "C:\\WINDOWS\\System32\\USER32.dll",
+          "C:\\WINDOWS\\System32\\IMM32.DLL",
+          "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+          "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+          "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+          "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+          "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+          "C:\\WINDOWS\\System32\\CRYPT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+          "C:\\WINDOWS\\System32\\combase.dll",
+          "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+          "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+          "C:\\WINDOWS\\System32\\Shell32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+          "C:\\WINDOWS\\System32\\SHCORE.dll",
+          "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+          "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+          "C:\\WINDOWS\\System32\\ole32.dll",
+          "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+          "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+          "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+          "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+          "C:\\WINDOWS\\System32\\wintrust.dll",
+          "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+          "C:\\WINDOWS\\system32\\rsaenh.dll",
+          "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll"
+        ],
+        "os": {
+          "architecture": "x64",
+          "build": 26300,
+          "major": 10,
+          "minor": 0,
+          "name": "Windows"
+        },
+        "pointer_bits": 64,
+        "protocol_version": 1
+      }
+    }
+  },
+  "build": {
+    "app_version": "0.1.0",
+    "compiler": "195136260",
+    "loaded_modules": [
+      "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+      "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+    ],
+    "os": {
+      "architecture": "x64",
+      "build": 26300,
+      "major": 10,
+      "minor": 0,
+      "name": "Windows"
+    },
+    "pointer_bits": 64,
+    "protocol_version": 1
+  },
+  "capabilities": [
+    {
+      "capability": {
+        "cases": [
+          {
+            "backend_status": "ready",
+            "case_id": "alu.fp32.fma",
+            "hardware_support": "supported",
+            "probe_execution": "passed",
+            "validation": {
+              "absolute_checksum": 160.0,
+              "finite_elements": 512,
+              "full_output_reference": true,
+              "iterations": 8,
+              "max_absolute_error": 0.0,
+              "nonzero_elements": 512,
+              "sampled_elements": 512
+            }
+          },
+          {
+            "backend_status": "ready",
+            "case_id": "gemm.fp32.strict",
+            "hardware_support": "supported",
+            "probe_execution": "passed",
+            "validation": {
+              "checksum": -13.7109375,
+              "full_matrix": true,
+              "max_absolute_error": 0.0,
+              "max_error_over_sum_abs": 0.0,
+              "max_relative_error": 0.0,
+              "max_unscaled_reference_error": 0.0,
+              "nonzero_elements": 391,
+              "quantization_error": {
+                "elements": 760,
+                "max_absolute": 0.0,
+                "rms": 0.0
+              },
+              "sampled_elements": 391,
+              "scaled_reference_observable": null,
+              "tolerance_policy": {
+                "K": 19,
+                "absolute_floor": 1e-06,
+                "dtype": "fp32",
+                "id": "dot-forward-error-v1",
+                "relative": 2.384185791015625e-07,
+                "sum_abs_factor": 4.5299581330540495e-06
+              },
+              "unscaled_reference_rejected_elements": 0
+            }
+          },
+          {
+            "backend_status": "ready",
+            "case_id": "alu.fp16.fma",
+            "hardware_support": "supported",
+            "probe_execution": "passed",
+            "validation": {
+              "absolute_checksum": 320.0,
+              "finite_elements": 1024,
+              "full_output_reference": true,
+              "iterations": 8,
+              "max_absolute_error": 0.0,
+              "nonzero_elements": 1024,
+              "sampled_elements": 1024
+            }
+          },
+          {
+            "backend_status": "ready",
+            "case_id": "gemm.fp16.acc32",
+            "hardware_support": "supported",
+            "probe_execution": "passed",
+            "validation": {
+              "checksum": -13.7109375,
+              "full_matrix": true,
+              "max_absolute_error": 0.0,
+              "max_error_over_sum_abs": 0.0,
+              "max_relative_error": 0.0,
+              "max_unscaled_reference_error": 0.0,
+              "nonzero_elements": 391,
+              "quantization_error": {
+                "elements": 760,
+                "max_absolute": 0.0,
+                "rms": 0.0
+              },
+              "sampled_elements": 391,
+              "scaled_reference_observable": null,
+              "tolerance_policy": {
+                "K": 19,
+                "absolute_floor": 1e-06,
+                "dtype": "fp16",
+                "id": "dot-forward-error-v1",
+                "relative": 2.384185791015625e-07,
+                "sum_abs_factor": 4.5299581330540495e-06
+              },
+              "unscaled_reference_rejected_elements": 0
+            }
+          },
+          {
+            "backend_status": "ready",
+            "case_id": "gemm.fp8.e4m3.acc32",
+            "hardware_support": "supported",
+            "probe_execution": "passed",
+            "validation": {
+              "checksum": -13.787109375,
+              "full_matrix": true,
+              "max_absolute_error": 0.0,
+              "max_error_over_sum_abs": 0.0,
+              "max_relative_error": 0.0,
+              "max_unscaled_reference_error": 0.4163818359375,
+              "nonzero_elements": 391,
+              "quantization_error": {
+                "elements": 760,
+                "max_absolute": 0.015625,
+                "rms": 0.006660775710600097
+              },
+              "sampled_elements": 391,
+              "scaled_reference_observable": true,
+              "tolerance_policy": {
+                "K": 19,
+                "absolute_floor": 1e-06,
+                "dtype": "fp8",
+                "id": "dot-forward-error-v1",
+                "relative": 2.384185791015625e-07,
+                "sum_abs_factor": 4.5299581330540495e-06
+              },
+              "unscaled_reference_rejected_elements": 391
+            }
+          }
+        ],
+        "hardware_certification": "consult_project_evidence_for_this_device_and_build",
+        "runtime": {
+          "cuBLASLt": 130401,
+          "cuda_compile_baseline": "13.2.86",
+          "cuda_driver_api": 13040,
+          "cuda_runtime": 13020,
+          "math_environment": {
+            "CUBLASLT_LOG_LEVEL": "0",
+            "CUBLAS_EMULATE_SINGLE_PRECISION": "0",
+            "CUBLAS_LOGINFO_DBG": "0",
+            "NVIDIA_TF32_OVERRIDE": "0"
+          },
+          "modules": [
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+            "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+            "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+            "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvcuda.dll",
+            "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+            "C:\\WINDOWS\\System32\\msvcrt.dll",
+            "C:\\WINDOWS\\System32\\sechost.dll",
+            "C:\\WINDOWS\\System32\\RPCRT4.dll",
+            "C:\\WINDOWS\\System32\\gdi32.dll",
+            "C:\\WINDOWS\\System32\\win32u.dll",
+            "C:\\WINDOWS\\System32\\gdi32full.dll",
+            "C:\\WINDOWS\\System32\\msvcp_win.dll",
+            "C:\\WINDOWS\\System32\\ucrtbase.dll",
+            "C:\\WINDOWS\\System32\\USER32.dll",
+            "C:\\WINDOWS\\System32\\IMM32.DLL",
+            "C:\\WINDOWS\\SYSTEM32\\dxcore.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcuda64.dll",
+            "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+            "C:\\WINDOWS\\SYSTEM32\\VERSION.dll",
+            "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll",
+            "C:\\WINDOWS\\SYSTEM32\\msasn1.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll",
+            "C:\\WINDOWS\\System32\\CRYPT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cryptbase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\wldp.dll",
+            "C:\\WINDOWS\\System32\\combase.dll",
+            "C:\\WINDOWS\\SYSTEM32\\drvstore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\devobj.dll",
+            "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\nvapi64.dll",
+            "C:\\WINDOWS\\System32\\Shell32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll",
+            "C:\\WINDOWS\\System32\\SHCORE.dll",
+            "C:\\WINDOWS\\system32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvapi64_impl.dll",
+            "C:\\WINDOWS\\System32\\SETUPAPI.dll",
+            "C:\\WINDOWS\\System32\\ole32.dll",
+            "C:\\WINDOWS\\System32\\OLEAUT32.dll",
+            "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdxgdmal64.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvdiagclt64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+            "C:\\WINDOWS\\SYSTEM32\\profapi.dll",
+            "C:\\WINDOWS\\System32\\wintrust.dll",
+            "C:\\WINDOWS\\System32\\imagehlp.dll",
+            "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll",
+            "C:\\WINDOWS\\system32\\rsaenh.dll",
+            "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvobjectloader64.dll",
+            "C:\\WINDOWS\\SYSTEM32\\gpapi.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\Display.NvContainer\\NvMessageBus.dll",
+            "C:\\WINDOWS\\System32\\WS2_32.dll",
+            "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cublasLt64_13.dll",
+            "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nv_dispi.inf_amd64_da865124972e1f80\\nvcudart_hybrid64.dll"
+          ]
+        },
+        "timing_scope": "device_elapsed_batch",
+        "timing_source": "cuda_events"
+      },
+      "device": {
+        "alias": "nvidia:0",
+        "architecture": "sm_120",
+        "backend": "cuda",
+        "backend_index": 0,
+        "best_effort": false,
+        "compute_capability": {
+          "major": 12,
+          "minor": 0
+        },
+        "device_id": null,
+        "id": "cuda:9510a92114f7034232ae2924c362def1",
+        "identity": {
+          "luid": "6d0c010000000000",
+          "luid_node_mask": 1,
+          "pci_bus_id": "0000:01:00.0",
+          "uuid": "9510a92114f7034232ae2924c362def1"
+        },
+        "integrated": false,
+        "memory_bytes": 17066033152,
+        "multiprocessor_count": 70,
+        "name": "NVIDIA GeForce RTX 5070 Ti",
+        "vendor_id": 4318
+      }
+    }
+  ],
+  "command_line": "\"G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe\" doctor --backend cuda --json results/cuda-doctor-frozen.json",
+  "devices": [
+    {
+      "alias": "nvidia:0",
+      "architecture": "sm_120",
+      "backend": "cuda",
+      "backend_index": 0,
+      "best_effort": false,
+      "compute_capability": {
+        "major": 12,
+        "minor": 0
+      },
+      "device_id": null,
+      "id": "cuda:9510a92114f7034232ae2924c362def1",
+      "identity": {
+        "luid": "6d0c010000000000",
+        "luid_node_mask": 1,
+        "pci_bus_id": "0000:01:00.0",
+        "uuid": "9510a92114f7034232ae2924c362def1"
+      },
+      "integrated": false,
+      "memory_bytes": 17066033152,
+      "multiprocessor_count": 70,
+      "name": "NVIDIA GeForce RTX 5070 Ti",
+      "vendor_id": 4318
+    }
+  ],
+  "results": [],
+  "schema_version": 1,
+  "summary": {
+    "exit_code": 0
+  }
+}

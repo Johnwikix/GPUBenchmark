@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-20",
+  "kind": "source integrity only; no compiler or GPU validation",
+  "files": {
+    "workers/intel/CMakeLists.txt": "a86b29c1007775148ea9e0f286d04545b0ff3c3b50859918739c056f626b4472",
+    "workers/intel/intel_worker.cpp": "f77b171c7c66a13d12f3eb66749c88a7c1a04e17fff3ec6587fd68bdb17c6c5b",
+    "workers/intel/README.md": "230b662ab60623dc369c468d70283d810fe7bd8907ce1a9fa9812dab15d631aa",
+    "workers/intel/SOURCES.json": "45319986e87f85817119514a0df9132575e8b551b2923198cf1420433cfbe30d"
+  }
+}

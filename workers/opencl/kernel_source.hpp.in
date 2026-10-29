@@ -1,0 +1,2 @@
+#pragma once
+static const char* alu_source=R"CLC(@GPUBENCH_OPENCL_SOURCE@)CLC";

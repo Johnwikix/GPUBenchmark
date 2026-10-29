@@ -1,0 +1,24 @@
+{
+  "status": "delivery_verified",
+  "time_utc": "2026-10-20T16:15:29.1016157Z",
+  "report": "results/RTX5070Ti_REPORT.html",
+  "task_report": "docs/TASK_REPORT.md",
+  "standard_evidence": "results/nvidia-0-standard-reuse-20261021-000632",
+  "standard_exit_code": 0,
+  "packaged_cuda_probes_passed": 5,
+  "source_manifest_matches": true,
+  "packages_verified": [
+    "gpubench-cuda-0.1.0-win-x64.zip",
+    "gpubench-evidence-20261021.zip",
+    "gpubench-host-0.1.0-win-x64.zip",
+    "gpubench-opencl-0.1.0-win-x64.zip",
+    "gpubench-source-0.1.0.zip"
+  ],
+  "limitations": [
+    "AMD and Intel source only: SDK/GPU absent",
+    "Other GPU models untested",
+    "cuBLAS profiler/external baseline pending",
+    "Clean-machine deployment unverified"
+  ],
+  "poweroff_requested_by_user": true
+}

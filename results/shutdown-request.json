@@ -1,0 +1,10 @@
+{
+  "requested_by_user": true,
+  "outputs_verified": "results/DELIVERY_STATUS.json",
+  "requested_utc": "2026-10-20T16:36:37.8094564Z",
+  "delay_seconds": 90,
+  "scheduled_utc": "2026-10-20T16:38:07.8094564Z",
+  "command": "shutdown.exe /s /t 90 /d p:0:0 /c gpubench_delivery_verified",
+  "exit_code": 0,
+  "status": "scheduled"
+}

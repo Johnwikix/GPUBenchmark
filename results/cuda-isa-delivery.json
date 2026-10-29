@@ -1,0 +1,8 @@
+{
+  "ffma_static_occurrences": 1200,
+  "scope": "SM120 static ALU instruction evidence; not a cuBLAS profiler trace",
+  "exit_code": 0,
+  "command": "G:\\Tool\\Cuda\\13.2.2\\toolkit\\bin\\cuobjdump.exe --dump-sass --gpu-architecture sm_120 out/Release/workers/cuda/cuda_worker.exe",
+  "hfma2_static_occurrences": 9744,
+  "exe_sha256": "51AB493675D7444350C87CEF875362769336073668EFDD80EBEBFF5B1088812F"
+}

@@ -1,0 +1,6 @@
+尝试对“FileSystem”提供程序执行 InitializeDefaultDrives 操作失败。
+G:\SoftwareProject\console\benchmark\scripts\build-windows.ps1 : Matched DPC++/oneMKL/UR environment missing. Run the p
+inned oneAPI setvars.bat, or supply -OneApiRoot and initialize that release.
+    + CategoryInfo          : NotSpecified: (:) [Write-Error], WriteErrorException
+    + FullyQualifiedErrorId : Microsoft.PowerShell.Commands.WriteErrorException,build-windows.ps1
+ 

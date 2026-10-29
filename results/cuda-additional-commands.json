@@ -1,0 +1,30 @@
+[
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite gemm --dtype fp8 --sizes 1024,2048,4096 --json results/cuda-fp8-scaled.json --csv results/cuda-fp8-scaled.csv",
+    "exit_code": 0,
+    "started": "2026-10-20T23:20:16.4077602+08:00",
+    "finished": "2026-10-20T23:20:24.7310786+08:00",
+    "log": "results/cuda-fp8-scaled.log"
+  },
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite gemm --dtype fp32,fp16,fp8 --m 31 --n 37 --k 19 --cache rotate --json results/cuda-non-square-rotate.json --csv results/cuda-non-square-rotate.csv",
+    "exit_code": 0,
+    "started": "2026-10-20T23:20:24.7750276+08:00",
+    "finished": "2026-10-20T23:20:40.3182048+08:00",
+    "log": "results/cuda-non-square-rotate.log"
+  },
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite alu --dtype fp32,fp16 --cache rotate --json results/cuda-alu-rotate.json --csv results/cuda-alu-rotate.csv",
+    "exit_code": 0,
+    "started": "2026-10-20T23:20:40.3261071+08:00",
+    "finished": "2026-10-20T23:20:44.6918343+08:00",
+    "log": "results/cuda-alu-rotate.log"
+  },
+  {
+    "command": ".\\out\\Release\\gpubench.exe run --backend cuda --device nvidia:0 --suite gemm --dtype fp32 --m 32768 --n 32768 --k 32768 --json results/cuda-memory-budget.json",
+    "exit_code": 3,
+    "started": "2026-10-20T23:20:44.6994469+08:00",
+    "finished": "2026-10-20T23:20:44.8830488+08:00",
+    "log": "results/cuda-memory-budget.log"
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+    "run",
+    "--backend",
+    "cuda",
+    "--device",
+    "nvidia:0",
+    "--suite",
+    "alu",
+    "--dtype",
+    "fp32,fp16",
+    "--json",
+    "G:\\SoftwareProject\\console\\benchmark\\results\\console-cancel\\1792512573010335000\\result.json",
+    "--log-dir",
+    "G:\\SoftwareProject\\console\\benchmark\\results\\console-cancel\\1792512573010335000\\workers"
+  ],
+  "mechanism": "Windows CTRL_BREAK_EVENT to hidden child console; same host handler as Ctrl+C",
+  "exit_code": 130,
+  "cancel_latency_ms": 46.000000000276486,
+  "completed_preserved": true,
+  "passed": true,
+  "wall_seconds": 2.01955246925354
+}

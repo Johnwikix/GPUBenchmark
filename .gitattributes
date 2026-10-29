@@ -1,0 +1,6 @@
+* text=auto
+*.png binary
+*.zip binary
+*.dll binary
+*.exe binary
+*.cubin binary

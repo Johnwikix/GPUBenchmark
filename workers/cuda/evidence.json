@@ -1,0 +1,134 @@
+{
+  "as_of": "2026-10-20",
+  "backend": "cuda",
+  "implemented": true,
+  "windows_build_passed": true,
+  "hardware_validated": {
+    "driver": "617.14",
+    "name": "NVIDIA GeForce RTX 5070 Ti",
+    "architecture": "sm_120",
+    "uuid": "9510a92114f7034232ae2924c362def1",
+    "os_build": "10.0.26300.0",
+    "cases": [
+      "alu.fp32.fma",
+      "alu.fp16.fma",
+      "gemm.fp32.strict",
+      "gemm.fp16.acc32",
+      "gemm.fp8.e4m3.acc32"
+    ]
+  },
+  "artifact_hashes": [
+    {
+      "path": "workers/cuda/main.cpp",
+      "bytes": 37553,
+      "sha256": "55b65d3c75ade432b2c490f6992f192d8c291696b032ac7f9586b0dc9084a5ec"
+    },
+    {
+      "path": "workers/cuda/kernels.cu",
+      "bytes": 2405,
+      "sha256": "0900250955eed2e0205f33ec475c594e602cb71704527809383fd4234fe359a5"
+    },
+    {
+      "path": "workers/cuda/kernel_api.hpp",
+      "bytes": 470,
+      "sha256": "2156a2d1369bb388f5212651195762e3216906bb3a3960985942e684bebbc870"
+    },
+    {
+      "path": "workers/cuda/CMakeLists.txt",
+      "bytes": 1786,
+      "sha256": "8e4af097d9cf6c300bb12c264d770beb2812205f7533bfadc677d27362f6cbf5"
+    },
+    {
+      "path": "out/Release/workers/cuda/cuda_worker.exe",
+      "bytes": 1526784,
+      "sha256": "abbcef5a1c45948e9d52f03edb4068bb4291bfa8c275f0e87a92c7ea7d211447"
+    },
+    {
+      "path": "out/Release/workers/cuda/cublasLt64_13.dll",
+      "bytes": 455685232,
+      "sha256": "8f54d7b3e5173bf2659f45bad6ae789ffef8218ab6254f10c0cc0cc5e3ec874c"
+    },
+    {
+      "path": "results/cuda-isa-evidence.json",
+      "bytes": 664,
+      "sha256": "99024a049f6b15c0734296c6305b865547937051e68acd8a5300c7039fb3655f"
+    },
+    {
+      "path": "results/cuda-sm120-sass-frozen.txt",
+      "bytes": 2702531,
+      "sha256": "4bc7b0337a14cce521565d2afaf64997aa14ed64dfe943cd6a52b8f99c752775"
+    },
+    {
+      "path": "workers/cuda/build-windows-frozen.log",
+      "bytes": 36070,
+      "sha256": "882ba72c693f1a1e6c59647b74b5ce4a55149d7c4eb1c4388212f9772b31fe4a"
+    },
+    {
+      "path": "results/cuda-doctor-frozen.json",
+      "bytes": 15609,
+      "sha256": "aae1bf21047bf07a84b4569d614f0aae8b19c5ef7ca31b55ec7e22a9fab9095b"
+    },
+    {
+      "path": "results/cuda-commands.json",
+      "bytes": 1020,
+      "sha256": "be2b07da74e895469bcbbc69cf3920bc92e12cd3897a85de113718c035744217"
+    },
+    {
+      "path": "results/cuda-additional-commands.json",
+      "bytes": 1566,
+      "sha256": "9d7c91b133b9a025eda704cf0353081c7e0116055f40c6c707cf149432e291c9"
+    },
+    {
+      "path": "results/cuda-alu.json",
+      "bytes": 40529,
+      "sha256": "334c1ec5f2f4c474169780de19d9f3daa3df24b255afd28a399dfdba45e36fca"
+    },
+    {
+      "path": "results/cuda-gemm.json",
+      "bytes": 194600,
+      "sha256": "561b5a21cda352dd75e825ebbd92408dfb51eba975cee9af93cd14b71ee5409a"
+    },
+    {
+      "path": "results/cuda-fp8-scaled.json",
+      "bytes": 75033,
+      "sha256": "dcf87b6da7ec73f55b97d1194ec6f68c2d07bd9dfd78975b415e7ee086f361d8"
+    },
+    {
+      "path": "results/cuda-non-square-rotate.json",
+      "bytes": 94561,
+      "sha256": "54b3d1c0e503236ed47833799bf60c31f932da769e0f295cabf5197126386bdf"
+    },
+    {
+      "path": "results/cuda-alu-rotate.json",
+      "bytes": 42718,
+      "sha256": "ee8c1cecdf028c50e8f6fa4a63f3415cef5f31f34dd22e5b6d65b85a7e5f7d69"
+    },
+    {
+      "path": "results/cuda-memory-budget.json",
+      "bytes": 16211,
+      "sha256": "9bd82efe58cce9aa72ef2b578ed6097f4c4fbc034e06aee0286eb8743c21ee74"
+    },
+    {
+      "path": "results/cuda-missing-blas/commands.json",
+      "bytes": 1159,
+      "sha256": "aa8522db69889e771648ed33e14b714c4b960fb2cb2056ffd24eeb2c11acd2b5"
+    },
+    {
+      "path": "results/cuda-missing-blas/alu.json",
+      "bytes": 40802,
+      "sha256": "f092d7d940b9c3223ef02b7a67b74148342d97ed5d1c2026ae9e2c1eebef0cb1"
+    },
+    {
+      "path": "results/cuda-missing-blas/gemm.json",
+      "bytes": 35807,
+      "sha256": "5e016a5f93da676a258525ad06446ec9548a16da324f520cbfd7263d53df2864"
+    }
+  ],
+  "limitations": [
+    "RTX40 and other target generations untested",
+    "clean machine untested",
+    "no cuBLASLt profiler trace",
+    "earlier FP8 product-one-scale evidence superseded by cuda-fp8-scaled.json"
+  ],
+  "note": "Final standard profile validation is coordinated by the integration agent and may produce a later evidence directory."
+}

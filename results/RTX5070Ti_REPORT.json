@@ -1,0 +1,2457 @@
+{
+  "validated_results": 13,
+  "created_utc": "2026-10-20T16:09:04.0594367Z",
+  "evidence": "results/nvidia-0-standard-reuse-20261021-000632",
+  "device": {
+    "alias": "nvidia:0",
+    "architecture": "sm_120",
+    "backend": "cuda",
+    "backend_index": 0,
+    "best_effort": false,
+    "compute_capability": {
+      "major": 12,
+      "minor": 0
+    },
+    "device_id": null,
+    "id": "cuda:9510a92114f7034232ae2924c362def1",
+    "identity": {
+      "luid": "6d0c010000000000",
+      "luid_node_mask": 1,
+      "pci_bus_id": "0000:01:00.0",
+      "uuid": "9510a92114f7034232ae2924c362def1"
+    },
+    "integrated": false,
+    "memory_bytes": 17066033152,
+    "multiprocessor_count": 70,
+    "name": "NVIDIA GeForce RTX 5070 Ti",
+    "vendor_id": 4318
+  },
+  "report": "G:\\SoftwareProject\\console\\benchmark\\results\\RTX5070Ti_REPORT.html",
+  "results": [
+    {
+      "source": "alu",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 507.8686981201172,
+        "allocation_budget_bytes": 7883718656,
+        "available_memory_bytes": 15767437312,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 101.18547058105469,
+            "repetitions": 54,
+            "wall_ms": 101.197
+          }
+        ],
+        "batch_target_ms": 100,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 1.824671983718872,
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp32",
+        "duration_ms": 1000,
+        "independent_accumulators": 16,
+        "iterations": 44992,
+        "kernel_variant": "cuda.__fmaf_rn",
+        "lanes_per_instruction": 1,
+        "native_only": true,
+        "recurrence": {
+          "addend_lane0": 0.25,
+          "addend_lane1": -0.125,
+          "input_generator": "splitmix64-dyadic-v1",
+          "multiplier": -1
+        },
+        "repetitions": 54,
+        "requested_allocation_bytes": 9175040,
+        "samples": 7,
+        "seed": 20261020,
+        "suite": "alu",
+        "threads": 71680,
+        "tuning": [
+          {
+            "accumulators": 4,
+            "flops": 1758167040,
+            "iterations": 6132,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.037151999771595,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 4,
+            "flops": 8895201280,
+            "iterations": 31024,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.1632000058889389,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 8,
+            "flops": 14219018240,
+            "iterations": 24796,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.25577598810195923,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 8,
+            "flops": 13858897920,
+            "iterations": 24168,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.24886399507522583,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 16,
+            "flops": 30951997440,
+            "iterations": 26988,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.5510720014572144,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 16,
+            "flops": 28699525120,
+            "iterations": 25024,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.5113919973373413,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 4,
+            "flops": 76712509440,
+            "iterations": 133776,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.3448959589004517,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 4,
+            "flops": 26332364800,
+            "iterations": 45920,
+            "threads": 71680,
+            "tuning_elapsed_ms": 0.46668800711631775,
+            "unroll": 8,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 8,
+            "flops": 101714493440,
+            "iterations": 88688,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.7783679962158203,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 8,
+            "flops": 44838420480,
+            "iterations": 39096,
+            "threads": 71680,
+            "tuning_elapsed_ms": 0.7858880162239075,
+            "unroll": 8,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 16,
+            "flops": 81189928960,
+            "iterations": 35396,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.4192320108413696,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 16,
+            "flops": 103200849920,
+            "iterations": 44992,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.8008960485458374,
+            "unroll": 8,
+            "workgroup": 256
+          }
+        ],
+        "unroll": 8,
+        "warmup_ms": 500,
+        "workgroup_size": 256,
+        "workspace_mib": 256
+      },
+      "case_id": "alu.fp32.fma",
+      "best_tflops": 55.48977232930319,
+      "median_tflops": 55.1679177756502
+    },
+    {
+      "source": "alu",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 506.80147552490234,
+        "allocation_budget_bytes": 7883718656,
+        "available_memory_bytes": 15767437312,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 100.42851257324219,
+            "repetitions": 46,
+            "wall_ms": 100.4397
+          }
+        ],
+        "batch_target_ms": 100,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 2.140064001083374,
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp16",
+        "duration_ms": 1000,
+        "independent_accumulators": 4,
+        "iterations": 108988,
+        "kernel_variant": "cuda.__hfma2",
+        "lanes_per_instruction": 2,
+        "native_only": true,
+        "recurrence": {
+          "addend_lane0": 0.25,
+          "addend_lane1": -0.125,
+          "input_generator": "splitmix64-dyadic-v1",
+          "multiplier": -1
+        },
+        "repetitions": 46,
+        "requested_allocation_bytes": 18350080,
+        "samples": 7,
+        "seed": 20261020,
+        "suite": "alu",
+        "threads": 71680,
+        "tuning": [
+          {
+            "accumulators": 4,
+            "flops": 13865779200,
+            "iterations": 24180,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.24566400051116943,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 4,
+            "flops": 19772211200,
+            "iterations": 34480,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.34780800342559814,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 8,
+            "flops": 33314570240,
+            "iterations": 29048,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.5830399990081787,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 8,
+            "flops": 28194897920,
+            "iterations": 24584,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.4917440116405487,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 16,
+            "flops": 42370334720,
+            "iterations": 18472,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.7384960055351257,
+            "unroll": 4,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 16,
+            "flops": 41581281280,
+            "iterations": 18128,
+            "threads": 35840,
+            "tuning_elapsed_ms": 0.7240960001945496,
+            "unroll": 8,
+            "workgroup": 128
+          },
+          {
+            "accumulators": 4,
+            "flops": 124996157440,
+            "iterations": 108988,
+            "threads": 71680,
+            "tuning_elapsed_ms": 2.136863946914673,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 4,
+            "flops": 129221263360,
+            "iterations": 112672,
+            "threads": 71680,
+            "tuning_elapsed_ms": 2.2093119621276855,
+            "unroll": 8,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 8,
+            "flops": 118532341760,
+            "iterations": 51676,
+            "threads": 71680,
+            "tuning_elapsed_ms": 2.0276479721069336,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 8,
+            "flops": 110540881920,
+            "iterations": 48192,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.8918720483779907,
+            "unroll": 8,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 16,
+            "flops": 115183452160,
+            "iterations": 25108,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.9820480346679688,
+            "unroll": 4,
+            "workgroup": 256
+          },
+          {
+            "accumulators": 16,
+            "flops": 111128084480,
+            "iterations": 24224,
+            "threads": 71680,
+            "tuning_elapsed_ms": 1.913856029510498,
+            "unroll": 8,
+            "workgroup": 256
+          }
+        ],
+        "unroll": 4,
+        "warmup_ms": 500,
+        "workgroup_size": 256,
+        "workspace_mib": 256
+      },
+      "case_id": "alu.fp16.fma",
+      "best_tflops": 56.783200437520485,
+      "median_tflops": 56.606343067595716
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 588.1085052490234,
+        "algorithm_id": 20,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 20,
+          "selected_workspace_bytes": 128,
+          "tested_candidates": [
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 0,
+              "median_ms": 0.0915519967675209,
+              "tuning_sample_times_ms": [
+                0.09200000017881393,
+                0.0915519967675209,
+                0.09113600105047226
+              ],
+              "workspace_bytes": 128
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 1,
+              "median_ms": 0.08508799970149994,
+              "tuning_sample_times_ms": [
+                0.08508799970149994,
+                0.08515200018882751,
+                0.08473599702119827
+              ],
+              "workspace_bytes": 128
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 2,
+              "median_ms": 0.08476799726486206,
+              "tuning_sample_times_ms": [
+                0.08451200276613235,
+                0.08476799726486206,
+                0.08531200140714645
+              ],
+              "workspace_bytes": 128
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 3,
+              "median_ms": 0.1029760017991066,
+              "tuning_sample_times_ms": [
+                0.10131199657917023,
+                0.10355199873447418,
+                0.1029760017991066
+              ],
+              "workspace_bytes": 128
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 4,
+              "median_ms": 0.1050880029797554,
+              "tuning_sample_times_ms": [
+                0.1050880029797554,
+                0.10496000200510025,
+                0.10521599650382996
+              ],
+              "workspace_bytes": 128
+            },
+            {
+              "algorithm_id": 16,
+              "heuristic_index": 5,
+              "median_ms": 0.09481599926948547,
+              "tuning_sample_times_ms": [
+                0.09491200000047684,
+                0.09478399902582169,
+                0.09481599926948547
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 6,
+              "median_ms": 0.10118400305509567,
+              "tuning_sample_times_ms": [
+                0.10118400305509567,
+                0.10281600058078766,
+                0.10096000134944916
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 7,
+              "median_ms": 0.09689600020647049,
+              "tuning_sample_times_ms": [
+                0.09702400118112564,
+                0.09689600020647049,
+                0.09539200365543365
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 95.28828430175781,
+            "repetitions": 1173,
+            "wall_ms": 95.2962
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.08524800091981888,
+        "compute_type": "CUBLAS_COMPUTE_32F_PEDANTIC",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp32",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 1024,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 1024,
+        "ldb": 1024,
+        "ldc": 1024,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "m": 1024,
+        "n": 1024,
+        "native_only": true,
+        "physical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "repetitions": 1173,
+        "requested_allocation_bytes": 285212680,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp32.strict",
+      "best_tflops": 25.754480485987735,
+      "median_tflops": 25.25277990645374
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 526.7125396728516,
+        "algorithm_id": 20,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 20,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 0,
+              "median_ms": 0.5744959712028503,
+              "tuning_sample_times_ms": [
+                0.5755839943885803,
+                0.5743359923362732,
+                0.5744959712028503
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 1,
+              "median_ms": 0.5809280276298523,
+              "tuning_sample_times_ms": [
+                0.5823360085487366,
+                0.5809280276298523,
+                0.5804479718208313
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 2,
+              "median_ms": 0.583296000957489,
+              "tuning_sample_times_ms": [
+                0.5843200087547302,
+                0.5831040143966675,
+                0.583296000957489
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 3,
+              "median_ms": 0.6097599864006042,
+              "tuning_sample_times_ms": [
+                0.6321920156478882,
+                0.6097599864006042,
+                0.6080639958381653
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 4,
+              "median_ms": 0.6018239855766296,
+              "tuning_sample_times_ms": [
+                0.6055039763450623,
+                0.6013439893722534,
+                0.6018239855766296
+              ],
+              "workspace_bytes": 512
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 5,
+              "median_ms": 0.5714880228042603,
+              "tuning_sample_times_ms": [
+                0.5714880228042603,
+                0.5689280033111572,
+                0.5859519839286804
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 6,
+              "median_ms": 0.5615360140800476,
+              "tuning_sample_times_ms": [
+                0.563103973865509,
+                0.5615360140800476,
+                0.5595200061798096
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 7,
+              "median_ms": 0.6246079802513123,
+              "tuning_sample_times_ms": [
+                0.6260799765586853,
+                0.6246079802513123,
+                0.623744010925293
+              ],
+              "workspace_bytes": 512
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 100.72313690185547,
+            "repetitions": 175,
+            "wall_ms": 100.7319
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.5685759782791138,
+        "compute_type": "CUBLAS_COMPUTE_32F_PEDANTIC",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp32",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 2048,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 2048,
+        "ldb": 2048,
+        "ldc": 2048,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "m": 2048,
+        "n": 2048,
+        "native_only": true,
+        "physical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "repetitions": 175,
+        "requested_allocation_bytes": 335544328,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp32.strict",
+      "best_tflops": 28.398037326951393,
+      "median_tflops": 28.282796508965237
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 532.6073684692383,
+        "algorithm_id": 20,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 20,
+          "selected_workspace_bytes": 2048,
+          "tested_candidates": [
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 0,
+              "median_ms": 4.507711887359619,
+              "tuning_sample_times_ms": [
+                4.333695888519287,
+                4.507711887359619,
+                4.721375942230225
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 1,
+              "median_ms": 4.42412805557251,
+              "tuning_sample_times_ms": [
+                4.396224021911621,
+                4.974048137664795,
+                4.42412805557251
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 2,
+              "median_ms": 4.433248043060303,
+              "tuning_sample_times_ms": [
+                4.433248043060303,
+                4.413023948669434,
+                4.477024078369141
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 3,
+              "median_ms": 4.420479774475098,
+              "tuning_sample_times_ms": [
+                5.0108160972595215,
+                4.416704177856445,
+                4.420479774475098
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 4,
+              "median_ms": 4.4609599113464355,
+              "tuning_sample_times_ms": [
+                4.4609599113464355,
+                4.456607818603516,
+                4.471327781677246
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 5,
+              "median_ms": 4.588064193725586,
+              "tuning_sample_times_ms": [
+                4.598495960235596,
+                4.588064193725586,
+                4.581727981567383
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 6,
+              "median_ms": 4.875072002410889,
+              "tuning_sample_times_ms": [
+                5.036287784576416,
+                4.875072002410889,
+                4.73686408996582
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 7,
+              "median_ms": 4.900000095367432,
+              "tuning_sample_times_ms": [
+                4.741727828979492,
+                4.900000095367432,
+                5.288479804992676
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 101.2790756225586,
+            "repetitions": 22,
+            "wall_ms": 101.2896
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 4.463136196136475,
+        "compute_type": "CUBLAS_COMPUTE_32F_PEDANTIC",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp32",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 4096,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 4096,
+        "ldb": 4096,
+        "ldc": 4096,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "m": 4096,
+        "n": 4096,
+        "native_only": true,
+        "physical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "repetitions": 22,
+        "requested_allocation_bytes": 536870920,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp32.strict",
+      "best_tflops": 28.86967210878632,
+      "median_tflops": 28.822751483856443
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 532.2675704956055,
+        "algorithm_id": 21,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 21,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 0,
+              "median_ms": 0.029920000582933426,
+              "tuning_sample_times_ms": [
+                0.031968001276254654,
+                0.029920000582933426,
+                0.029759999364614487
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 1,
+              "median_ms": 0.02940800040960312,
+              "tuning_sample_times_ms": [
+                0.029311999678611755,
+                0.030239999294281006,
+                0.02940800040960312
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 2,
+              "median_ms": 0.03171199932694435,
+              "tuning_sample_times_ms": [
+                0.03187200054526329,
+                0.03171199932694435,
+                0.03126399964094162
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 3,
+              "median_ms": 0.033535998314619064,
+              "tuning_sample_times_ms": [
+                0.033535998314619064,
+                0.033344000577926636,
+                0.03363199904561043
+              ],
+              "workspace_bytes": 1024
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 4,
+              "median_ms": 0.03446400165557861,
+              "tuning_sample_times_ms": [
+                0.033440001308918,
+                0.03446400165557861,
+                0.03548799827694893
+              ],
+              "workspace_bytes": 1024
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 5,
+              "median_ms": 0.033663999289274216,
+              "tuning_sample_times_ms": [
+                0.03340800106525421,
+                0.03411199897527695,
+                0.033663999289274216
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 6,
+              "median_ms": 0.03964800015091896,
+              "tuning_sample_times_ms": [
+                0.03964800015091896,
+                0.0395519994199276,
+                0.040063999593257904
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 7,
+              "median_ms": 0.04416000097990036,
+              "tuning_sample_times_ms": [
+                0.04374400153756142,
+                0.04416000097990036,
+                0.04419200122356415
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 83.78559875488281,
+            "repetitions": 3328,
+            "wall_ms": 83.7933
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.030047999694943428,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp16",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 1024,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 1024,
+        "ldb": 1024,
+        "ldc": 1024,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "m": 1024,
+        "n": 1024,
+        "native_only": true,
+        "physical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "repetitions": 3328,
+        "requested_allocation_bytes": 281018376,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp16.acc32",
+      "best_tflops": 79.69920941280326,
+      "median_tflops": 79.0864009655235
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 538.4621429443359,
+        "algorithm_id": 21,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 21,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 0,
+              "median_ms": 0.18326400220394135,
+              "tuning_sample_times_ms": [
+                0.1842239946126938,
+                0.1828480064868927,
+                0.18326400220394135
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 1,
+              "median_ms": 0.1807679980993271,
+              "tuning_sample_times_ms": [
+                0.1807679980993271,
+                0.18166400492191315,
+                0.1767359972000122
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 2,
+              "median_ms": 0.16710400581359863,
+              "tuning_sample_times_ms": [
+                0.16998399794101715,
+                0.166143998503685,
+                0.16710400581359863
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 3,
+              "median_ms": 0.19753600656986237,
+              "tuning_sample_times_ms": [
+                0.1971520036458969,
+                0.19763199985027313,
+                0.19753600656986237
+              ],
+              "workspace_bytes": 2048
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 4,
+              "median_ms": 0.17257599532604218,
+              "tuning_sample_times_ms": [
+                0.17257599532604218,
+                0.17257599532604218,
+                0.17257599532604218
+              ],
+              "workspace_bytes": 4096
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 5,
+              "median_ms": 0.1748799979686737,
+              "tuning_sample_times_ms": [
+                0.17520000040531158,
+                0.1748799979686737,
+                0.1735360026359558
+              ],
+              "workspace_bytes": 4096
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 6,
+              "median_ms": 0.17977599799633026,
+              "tuning_sample_times_ms": [
+                0.17977599799633026,
+                0.17971199750900269,
+                0.17977599799633026
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 7,
+              "median_ms": 0.28064000606536865,
+              "tuning_sample_times_ms": [
+                0.2957119941711426,
+                0.28064000606536865,
+                0.2662400007247925
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 100.41990661621094,
+            "repetitions": 600,
+            "wall_ms": 100.4303
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.1664319932460785,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp16",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 2048,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 2048,
+        "ldb": 2048,
+        "ldc": 2048,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "m": 2048,
+        "n": 2048,
+        "native_only": true,
+        "physical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "repetitions": 600,
+        "requested_allocation_bytes": 318767112,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp16.acc32",
+      "best_tflops": 96.70114622454086,
+      "median_tflops": 96.40038199772226
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 522.2726058959961,
+        "algorithm_id": 21,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 21,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 0,
+              "median_ms": 1.2594879865646362,
+              "tuning_sample_times_ms": [
+                1.260864019393921,
+                1.2594879865646362,
+                1.2568320035934448
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 1,
+              "median_ms": 1.2725759744644165,
+              "tuning_sample_times_ms": [
+                1.3814400434494019,
+                1.2725759744644165,
+                1.270367980003357
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 2,
+              "median_ms": 1.4103679656982422,
+              "tuning_sample_times_ms": [
+                1.4204800128936768,
+                1.4103679656982422,
+                1.4093760251998901
+              ],
+              "workspace_bytes": 4096
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 3,
+              "median_ms": 1.2780799865722656,
+              "tuning_sample_times_ms": [
+                1.275712013244629,
+                1.2780799865722656,
+                1.2787840366363525
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 4,
+              "median_ms": 1.3838720321655273,
+              "tuning_sample_times_ms": [
+                1.3698559999465942,
+                1.3838720321655273,
+                1.39683198928833
+              ],
+              "workspace_bytes": 8192
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 5,
+              "median_ms": 1.3465280532836914,
+              "tuning_sample_times_ms": [
+                1.3432320356369019,
+                1.3468480110168457,
+                1.3465280532836914
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 6,
+              "median_ms": 1.330623984336853,
+              "tuning_sample_times_ms": [
+                1.330623984336853,
+                1.4907519817352295,
+                1.3127039670944214
+              ],
+              "workspace_bytes": 16384
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 7,
+              "median_ms": 1.3676480054855347,
+              "tuning_sample_times_ms": [
+                1.5352959632873535,
+                1.366368055343628,
+                1.3676480054855347
+              ],
+              "workspace_bytes": 16384
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 101.33843231201172,
+            "repetitions": 79,
+            "wall_ms": 101.3559
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 1.2616959810256958,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp16",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 4096,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 4096,
+        "ldb": 4096,
+        "ldc": 4096,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "m": 4096,
+        "n": 4096,
+        "native_only": true,
+        "physical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "repetitions": 79,
+        "requested_allocation_bytes": 469762056,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp16.acc32",
+      "best_tflops": 102.98462900271205,
+      "median_tflops": 102.47726058076863
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 518.7242279052734,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 0,
+              "median_ms": 0.016767999157309532,
+              "tuning_sample_times_ms": [
+                0.016767999157309532,
+                0.015807999297976494,
+                0.044256001710891724
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.015904000028967857,
+              "tuning_sample_times_ms": [
+                0.015904000028967857,
+                0.01568000018596649,
+                0.03311999887228012
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.01817600056529045,
+              "tuning_sample_times_ms": [
+                0.018688000738620758,
+                0.018015999346971512,
+                0.01817600056529045
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.017664000391960144,
+              "tuning_sample_times_ms": [
+                0.01711999997496605,
+                0.017664000391960144,
+                0.01775999926030636
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 4,
+              "median_ms": 0.018112000077962875,
+              "tuning_sample_times_ms": [
+                0.019967999309301376,
+                0.018015999346971512,
+                0.018112000077962875
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 5,
+              "median_ms": 0.020191999152302742,
+              "tuning_sample_times_ms": [
+                0.02038400061428547,
+                0.020191999152302742,
+                0.020096000283956528
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 6,
+              "median_ms": 0.02454400062561035,
+              "tuning_sample_times_ms": [
+                0.025855999439954758,
+                0.02454400062561035,
+                0.02393599972128868
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 7,
+              "median_ms": 0.029343999922275543,
+              "tuning_sample_times_ms": [
+                0.029343999922275543,
+                0.02175999991595745,
+                0.08160000294446945
+              ],
+              "workspace_bytes": 4195487
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 46.32659149169922,
+            "repetitions": 4096,
+            "wall_ms": 46.3326
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.016127999871969223,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 1024,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 1024,
+        "ldb": 1024,
+        "ldc": 1024,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "m": 1024,
+        "n": 1024,
+        "native_only": true,
+        "physical_shape": {
+          "k": 1024,
+          "m": 1024,
+          "n": 1024
+        },
+        "repetitions": 4096,
+        "requested_allocation_bytes": 278921224,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "best_tflops": 174.53019413027667,
+      "median_tflops": 170.0278525626674
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 589.4255065917969,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 0,
+              "median_ms": 0.06764800101518631,
+              "tuning_sample_times_ms": [
+                0.06780800223350525,
+                0.0658240020275116,
+                0.06764800101518631
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.06681600213050842,
+              "tuning_sample_times_ms": [
+                0.06719999760389328,
+                0.06681600213050842,
+                0.06524799764156342
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.059007998555898666,
+              "tuning_sample_times_ms": [
+                0.05913599953055382,
+                0.059007998555898666,
+                0.05878400057554245
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.058687999844551086,
+              "tuning_sample_times_ms": [
+                0.05920000001788139,
+                0.058687999844551086,
+                0.05724800005555153
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 4,
+              "median_ms": 0.07932800054550171,
+              "tuning_sample_times_ms": [
+                0.0833280012011528,
+                0.07932800054550171,
+                0.07926400005817413
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 5,
+              "median_ms": 0.07926400005817413,
+              "tuning_sample_times_ms": [
+                0.0793600007891655,
+                0.07926400005817413,
+                0.07919999957084656
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 6,
+              "median_ms": 0.10076799988746643,
+              "tuning_sample_times_ms": [
+                0.09868799895048141,
+                0.10076799988746643,
+                0.10076799988746643
+              ],
+              "workspace_bytes": 16781471
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 7,
+              "median_ms": 0.10998400300741196,
+              "tuning_sample_times_ms": [
+                0.10998400300741196,
+                0.10982400178909302,
+                0.10998400300741196
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 93.436767578125,
+            "repetitions": 1683,
+            "wall_ms": 93.4458
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.05939200147986412,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 2048,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 2048,
+        "ldb": 2048,
+        "ldc": 2048,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "m": 2048,
+        "n": 2048,
+        "native_only": true,
+        "physical_shape": {
+          "k": 2048,
+          "m": 2048,
+          "n": 2048
+        },
+        "repetitions": 1683,
+        "requested_allocation_bytes": 310378504,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "best_tflops": 294.22555950812495,
+      "median_tflops": 291.6340613681753
+    },
+    {
+      "source": "gemm",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 530.6290817260742,
+        "algorithm_id": 67,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 67,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 0,
+              "median_ms": 0.7450240254402161,
+              "tuning_sample_times_ms": [
+                0.7446399927139282,
+                0.7466560006141663,
+                0.7450240254402161
+              ],
+              "workspace_bytes": 67117215
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 1,
+              "median_ms": 0.39606401324272156,
+              "tuning_sample_times_ms": [
+                0.3854080140590668,
+                0.3965759873390198,
+                0.39606401324272156
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 2,
+              "median_ms": 0.44038400053977966,
+              "tuning_sample_times_ms": [
+                0.44038400053977966,
+                0.4323520064353943,
+                0.4469760060310364
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 3,
+              "median_ms": 0.5477439761161804,
+              "tuning_sample_times_ms": [
+                0.5481600165367126,
+                0.5477439761161804,
+                0.5459840297698975
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 4,
+              "median_ms": 1.4293440580368042,
+              "tuning_sample_times_ms": [
+                1.3763840198516846,
+                1.4742079973220825,
+                1.4293440580368042
+              ],
+              "workspace_bytes": 67125407
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 5,
+              "median_ms": 1.7839679718017578,
+              "tuning_sample_times_ms": [
+                1.8127039670944214,
+                1.7839679718017578,
+                1.7125760316848755
+              ],
+              "workspace_bytes": 67141791
+            },
+            {
+              "algorithm_id": 67,
+              "heuristic_index": 6,
+              "median_ms": 0.8009600043296814,
+              "tuning_sample_times_ms": [
+                0.8141120076179504,
+                0.8009600043296814,
+                0.7876480221748352
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 35,
+              "heuristic_index": 7,
+              "median_ms": 1.3523839712142944,
+              "tuning_sample_times_ms": [
+                1.3784639835357666,
+                1.3394880294799805,
+                1.3523839712142944
+              ],
+              "workspace_bytes": 134316191
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 102.71753692626953,
+            "repetitions": 245,
+            "wall_ms": 102.7294
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.4068799912929535,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 4096,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 4096,
+        "ldb": 4096,
+        "ldc": 4096,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "m": 4096,
+        "n": 4096,
+        "native_only": true,
+        "physical_shape": {
+          "k": 4096,
+          "m": 4096,
+          "n": 4096
+        },
+        "repetitions": 245,
+        "requested_allocation_bytes": 436207624,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tensor_scales": {
+          "a": 0.5,
+          "b": 1.5,
+          "mode": "CUBLASLT_MATMUL_MATRIX_SCALE_SCALAR_32F (documented default)"
+        },
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "best_tflops": 314.18842365981595,
+      "median_tflops": 312.1597086930602
+    },
+    {
+      "source": "non-square",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 523.6824951171875,
+        "algorithm_id": 20,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 20,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 0,
+              "median_ms": 0.011711999773979187,
+              "tuning_sample_times_ms": [
+                0.011711999773979187,
+                0.0541439987719059,
+                0.011327999643981457
+              ],
+              "workspace_bytes": 491520
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 1,
+              "median_ms": 0.012608000077307224,
+              "tuning_sample_times_ms": [
+                0.0071680000983178616,
+                0.012671999633312225,
+                0.012608000077307224
+              ],
+              "workspace_bytes": 344064
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 2,
+              "median_ms": 0.01235199999064207,
+              "tuning_sample_times_ms": [
+                0.012160000391304493,
+                0.01235199999064207,
+                0.012608000077307224
+              ],
+              "workspace_bytes": 983040
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 3,
+              "median_ms": 0.012543999589979649,
+              "tuning_sample_times_ms": [
+                0.012992000207304955,
+                0.012543999589979649,
+                0.012319999746978283
+              ],
+              "workspace_bytes": 983040
+            },
+            {
+              "algorithm_id": 10,
+              "heuristic_index": 4,
+              "median_ms": 0.030688000842928886,
+              "tuning_sample_times_ms": [
+                0.030688000842928886,
+                0.013824000023305416,
+                0.04022400081157684
+              ],
+              "workspace_bytes": 96
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 5,
+              "median_ms": 0.014271999709308147,
+              "tuning_sample_times_ms": [
+                0.014271999709308147,
+                0.014336000196635723,
+                0.01414399966597557
+              ],
+              "workspace_bytes": 245760
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 6,
+              "median_ms": 0.01235199999064207,
+              "tuning_sample_times_ms": [
+                0.01235199999064207,
+                0.012703999876976013,
+                0.012160000391304493
+              ],
+              "workspace_bytes": 344064
+            },
+            {
+              "algorithm_id": 20,
+              "heuristic_index": 7,
+              "median_ms": 0.011327999643981457,
+              "tuning_sample_times_ms": [
+                0.01104000024497509,
+                0.027168000116944313,
+                0.011327999643981457
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 30.010303497314453,
+            "repetitions": 4096,
+            "wall_ms": 30.0155
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.010975999757647514,
+        "compute_type": "CUBLAS_COMPUTE_32F_PEDANTIC",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp32",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 80,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 80,
+        "ldb": 80,
+        "ldc": 128,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 80,
+          "m": 128,
+          "n": 96
+        },
+        "m": 128,
+        "n": 96,
+        "native_only": true,
+        "physical_shape": {
+          "k": 80,
+          "m": 128,
+          "n": 96
+        },
+        "repetitions": 4096,
+        "requested_allocation_bytes": 268605448,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp32.strict",
+      "best_tflops": 0.2835208822987157,
+      "median_tflops": 0.2662985344653004
+    },
+    {
+      "source": "non-square",
+      "status": "ok",
+      "validation": "passed",
+      "configuration": {
+        "actual_warmup_ms": 518.0415058135986,
+        "algorithm_id": 21,
+        "algorithm_search": {
+          "cache_hit": false,
+          "candidate_limit": 32,
+          "returned_candidates": 8,
+          "selected_algorithm_id": 21,
+          "selected_workspace_bytes": 0,
+          "tested_candidates": [
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 0,
+              "median_ms": 0.0072639998979866505,
+              "tuning_sample_times_ms": [
+                0.0072639998979866505,
+                0.009088000282645226,
+                0.007199999876320362
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 1,
+              "median_ms": 0.007071999832987785,
+              "tuning_sample_times_ms": [
+                0.008608000352978706,
+                0.007071999832987785,
+                0.007071999832987785
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 2,
+              "median_ms": 0.0071680000983178616,
+              "tuning_sample_times_ms": [
+                0.008960000239312649,
+                0.0071680000983178616,
+                0.006304000038653612
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 3,
+              "median_ms": 0.008608000352978706,
+              "tuning_sample_times_ms": [
+                0.0063680000603199005,
+                0.008608000352978706,
+                0.008704000152647495
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 23,
+              "heuristic_index": 4,
+              "median_ms": 0.009056000038981438,
+              "tuning_sample_times_ms": [
+                0.009056000038981438,
+                0.00723200011998415,
+                0.009119999594986439
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 23,
+              "heuristic_index": 5,
+              "median_ms": 0.007199999876320362,
+              "tuning_sample_times_ms": [
+                0.007199999876320362,
+                0.0072639998979866505,
+                0.007104000076651573
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 21,
+              "heuristic_index": 6,
+              "median_ms": 0.006976000033318996,
+              "tuning_sample_times_ms": [
+                0.007135999854654074,
+                0.006719999946653843,
+                0.006976000033318996
+              ],
+              "workspace_bytes": 0
+            },
+            {
+              "algorithm_id": 23,
+              "heuristic_index": 7,
+              "median_ms": 0.018559999763965607,
+              "tuning_sample_times_ms": [
+                0.022048000246286392,
+                0.007648000027984381,
+                0.018559999763965607
+              ],
+              "workspace_bytes": 0
+            }
+          ],
+          "workspace_limit_bytes": 268435456
+        },
+        "allocation_budget_bytes": 7882670080,
+        "alpha": 1,
+        "available_memory_bytes": 15765340160,
+        "batch_calibration": [
+          {
+            "elapsed_ms": 25.66748809814453,
+            "repetitions": 4096,
+            "wall_ms": 25.6722
+          }
+        ],
+        "batch_target_ms": 100,
+        "beta": 0,
+        "buffer_groups": 1,
+        "cache": "reuse",
+        "cache_policy": "reuse",
+        "calibration_ms": 0.007360000163316727,
+        "compute_type": "CUBLAS_COMPUTE_32F",
+        "device": {
+          "alias": "nvidia:0",
+          "architecture": "sm_120",
+          "backend": "cuda",
+          "backend_index": 0,
+          "best_effort": false,
+          "compute_capability": {
+            "major": 12,
+            "minor": 0
+          },
+          "device_id": null,
+          "id": "cuda:9510a92114f7034232ae2924c362def1",
+          "identity": {
+            "luid": "6d0c010000000000",
+            "luid_node_mask": 1,
+            "pci_bus_id": "0000:01:00.0",
+            "uuid": "9510a92114f7034232ae2924c362def1"
+          },
+          "integrated": false,
+          "memory_bytes": 17066033152,
+          "multiprocessor_count": 70,
+          "name": "NVIDIA GeForce RTX 5070 Ti",
+          "vendor_id": 4318
+        },
+        "dtype": "fp16",
+        "duration_ms": 1000,
+        "fast_accum": false,
+        "input_generator": "splitmix64-signed-v1",
+        "k": 80,
+        "layout": "column_major_TN; physical A[K,M], B[K,N], C/D[M,N]",
+        "lda": 80,
+        "ldb": 80,
+        "ldc": 128,
+        "library": "cuBLASLt",
+        "library_version": 130401,
+        "logical_shape": {
+          "k": 80,
+          "m": 128,
+          "n": 96
+        },
+        "m": 128,
+        "n": 96,
+        "native_only": true,
+        "physical_shape": {
+          "k": 80,
+          "m": 128,
+          "n": 96
+        },
+        "repetitions": 4096,
+        "requested_allocation_bytes": 268569608,
+        "samples": 7,
+        "scale_type": "CUDA_R_32F",
+        "seed": 20261020,
+        "single_precision_emulation": false,
+        "suite": "gemm",
+        "tf32": false,
+        "warmup_ms": 500,
+        "workspace_bytes": 268435456,
+        "workspace_mib": 256
+      },
+      "case_id": "gemm.fp16.acc32",
+      "best_tflops": 0.34833471310012043,
+      "median_tflops": 0.3292122574424542
+    }
+  ]
+}

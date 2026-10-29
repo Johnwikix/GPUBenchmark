@@ -1,0 +1,67 @@
+# Host stays on MSVC. Only device translation units use the pinned AMD compiler.
+set(GPUBENCH_ROCM_ROOT "$ENV{HIP_PATH}" CACHE PATH "ROCm Core SDK root (10.1.0 Windows candidate)")
+find_path(GPUBENCH_HIP_INCLUDE hip/hip_runtime_api.h HINTS "${GPUBENCH_ROCM_ROOT}/include" REQUIRED)
+find_library(GPUBENCH_HIP_LIBRARY NAMES amdhip64 amdhip64_7 HINTS "${GPUBENCH_ROCM_ROOT}/lib" REQUIRED)
+find_program(GPUBENCH_AMD_COMPILER NAMES amdclang++ clang++ clang
+  HINTS "${GPUBENCH_ROCM_ROOT}/bin" "${GPUBENCH_ROCM_ROOT}/lib/llvm/bin" NO_DEFAULT_PATH REQUIRED)
+execute_process(COMMAND "${GPUBENCH_AMD_COMPILER}" --version OUTPUT_VARIABLE _amd_version ERROR_VARIABLE _amd_version_error RESULT_VARIABLE _amd_version_result OUTPUT_STRIP_TRAILING_WHITESPACE)
+if(NOT _amd_version_result EQUAL 0)
+  message(FATAL_ERROR "AMD compiler cannot run: ${_amd_version_error}")
+endif()
+set(GPUBENCH_AMD_ARCHITECTURES "gfx1100;gfx1101;gfx1102;gfx1200;gfx1201" CACHE STRING "Explicit AMD targets; never inferred from build-machine GPU")
+find_path(GPUBENCH_HIPBLASLT_INCLUDE hipblaslt/hipblaslt.h HINTS "${GPUBENCH_ROCM_ROOT}/include")
+find_path(GPUBENCH_ROCBLAS_INCLUDE rocblas/rocblas.h HINTS "${GPUBENCH_ROCM_ROOT}/include")
+set(_amd_flags --driver-mode=g++ -x hip -std=c++17 -O3 -D__HIP_PLATFORM_AMD__
+  "--hip-path=${GPUBENCH_ROCM_ROOT}" "--rocm-path=${GPUBENCH_ROCM_ROOT}" "-I${GPUBENCH_HIP_INCLUDE}")
+set(_arches)
+foreach(_arch IN LISTS GPUBENCH_AMD_ARCHITECTURES)
+  if(NOT _arch MATCHES "^gfx(110[012]|120[01])$")
+    message(FATAL_ERROR "AMD initial target must be gfx1100/1101/1102/1200/1201; got ${_arch}")
+  endif()
+  list(APPEND _arches "--offload-arch=${_arch}")
+endforeach()
+set(_alu_object "${CMAKE_CURRENT_BINARY_DIR}/amd_alu.obj")
+set(_amd_host_runtime -fms-runtime-lib=static)
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  set(_amd_host_runtime -fms-runtime-lib=static_dbg)
+endif()
+add_custom_command(OUTPUT "${_alu_object}"
+  COMMAND "${GPUBENCH_AMD_COMPILER}" ${_amd_flags} ${_amd_host_runtime} ${_arches} -c "${CMAKE_CURRENT_SOURCE_DIR}/alu.hip" -o "${_alu_object}"
+  DEPENDS alu.hip kernels.hpp VERBATIM COMMAND_EXPAND_LISTS)
+set_source_files_properties("${_alu_object}" PROPERTIES EXTERNAL_OBJECT TRUE GENERATED TRUE)
+add_executable(amd_worker main.cpp gemm.cpp "${_alu_object}")
+target_link_libraries(amd_worker PRIVATE gpubench_common "${GPUBENCH_HIP_LIBRARY}")
+configure_file(build_metadata.hpp.in "${CMAKE_CURRENT_BINARY_DIR}/build_metadata.hpp" @ONLY)
+target_include_directories(amd_worker PRIVATE "${GPUBENCH_HIP_INCLUDE}" "${CMAKE_CURRENT_BINARY_DIR}")
+target_compile_definitions(amd_worker PRIVATE __HIP_PLATFORM_AMD__)
+if(GPUBENCH_HIPBLASLT_INCLUDE)
+  target_include_directories(amd_worker PRIVATE "${GPUBENCH_HIPBLASLT_INCLUDE}")
+  target_compile_definitions(amd_worker PRIVATE GB_HAVE_HIPBLASLT=1)
+endif()
+if(GPUBENCH_ROCBLAS_INCLUDE)
+  target_include_directories(amd_worker PRIVATE "${GPUBENCH_ROCBLAS_INCLUDE}")
+  target_compile_definitions(amd_worker PRIVATE GB_HAVE_ROCBLAS=1)
+endif()
+set(_code_objects)
+foreach(_arch IN LISTS GPUBENCH_AMD_ARCHITECTURES)
+  if(_arch MATCHES "^gfx11")
+    set(_source wmma_rdna3.hip)
+  else()
+    set(_source wmma_rdna4.hip)
+  endif()
+  set(_output "${CMAKE_CURRENT_BINARY_DIR}/kernels/${_arch}.hsaco")
+  add_custom_command(OUTPUT "${_output}"
+    COMMAND "${CMAKE_COMMAND}" -E make_directory "${CMAKE_CURRENT_BINARY_DIR}/kernels"
+    COMMAND "${GPUBENCH_AMD_COMPILER}" ${_amd_flags} "--offload-arch=${_arch}" -mno-wavefrontsize64
+      --cuda-device-only "${CMAKE_CURRENT_SOURCE_DIR}/${_source}" -o "${_output}"
+    DEPENDS "${_source}" VERBATIM COMMAND_EXPAND_LISTS)
+  list(APPEND _code_objects "${_output}")
+endforeach()
+add_custom_target(amd_wmma ALL DEPENDS ${_code_objects})
+add_dependencies(amd_worker amd_wmma)
+add_custom_command(TARGET amd_worker POST_BUILD
+  COMMAND "${CMAKE_COMMAND}" -E copy_directory "${CMAKE_CURRENT_BINARY_DIR}/kernels" "$<TARGET_FILE_DIR:amd_worker>/kernels")
+install(TARGETS amd_worker RUNTIME DESTINATION workers/amd)
+install(FILES ${_code_objects} DESTINATION workers/amd/kernels)
+# Runtime and BLAS data must be copied only from a version-locked, licensed SDK
+# manifest by the package script. Do not glob arbitrary developer DLLs here.

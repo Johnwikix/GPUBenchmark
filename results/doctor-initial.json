@@ -1,0 +1,44 @@
+{
+  "app_version": "0.1.0",
+  "backends": {
+    "amd": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\amd\\amd_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "cuda": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "intel": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\intel\\intel_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "opencl": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\opencl\\opencl_worker.exe",
+      "reason": "worker executable not found"
+    }
+  },
+  "build": {
+    "app_version": "0.1.0",
+    "compiler": "195136260",
+    "loaded_modules": [
+      "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+      "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+    ],
+    "pointer_bits": 64,
+    "protocol_version": 1
+  },
+  "command_line": "\"G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe\" doctor --json results/doctor-initial.json",
+  "devices": [],
+  "results": [],
+  "schema_version": 1,
+  "summary": {
+    "exit_code": 0
+  }
+}

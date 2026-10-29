@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gpubench.local/schemas/result-v1.schema.json",
+  "title": "gpubench individual result v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "app_version",
+    "build",
+    "device",
+    "backend",
+    "suite",
+    "case_id",
+    "input_a",
+    "input_b",
+    "accumulation",
+    "output",
+    "scaling",
+    "density",
+    "implementation",
+    "configuration",
+    "hardware_support",
+    "backend_status",
+    "result_status",
+    "reason_code",
+    "reason_message",
+    "validation_status",
+    "reference_kind",
+    "sampled_elements",
+    "error_metrics",
+    "tolerance_policy",
+    "native_evidence",
+    "timing_source",
+    "timing_scope",
+    "sample_times_ms",
+    "raw_samples",
+    "median_ms",
+    "best_ms",
+    "wall_ms",
+    "measurement_duration",
+    "median_tflops",
+    "best_tflops"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "device": {
+      "type": "object",
+      "required": [
+        "id"
+      ]
+    },
+    "suite": {
+      "enum": [
+        "alu",
+        "gemm",
+        "matrix_micro"
+      ]
+    },
+    "density": {
+      "const": "dense"
+    },
+    "configuration": {
+      "type": "object"
+    },
+    "hardware_support": {
+      "enum": [
+        "supported",
+        "unsupported",
+        "unknown"
+      ]
+    },
+    "backend_status": {
+      "enum": [
+        "ready",
+        "not_built",
+        "runtime_missing",
+        "driver_incompatible",
+        "kernel_missing",
+        "api_unsupported",
+        "configuration_unsupported",
+        "probe_failed"
+      ]
+    },
+    "result_status": {
+      "enum": [
+        "ok",
+        "skipped",
+        "failed",
+        "cancelled"
+      ]
+    },
+    "implementation": {
+      "enum": [
+        "native",
+        "converted",
+        "unknown"
+      ]
+    },
+    "sample_times_ms": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      }
+    },
+    "raw_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "index",
+          "elapsed_ms",
+          "wall_ms",
+          "repetitions",
+          "flops"
+        ],
+        "properties": {
+          "elapsed_ms": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "wall_ms": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "repetitions": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "flops": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_unix_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_unix_ms": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "median_tflops": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "best_tflops": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "timing_scope": {
+      "enum": [
+        null,
+        "device_elapsed_batch",
+        "host_synchronized_batch"
+      ]
+    },
+    "timing_source": {
+      "enum": [
+        null,
+        "cuda_events",
+        "hip_events",
+        "opencl_events",
+        "sycl_profiling_sentinels",
+        "host_qpc",
+        "host_steady_clock",
+        "sycl_sentinel",
+        "sycl_sentinels",
+        "sycl_sentinel_events"
+      ]
+    },
+    "accumulation": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "result_status": {
+            "const": "ok"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "validation_status": {
+            "const": "passed"
+          },
+          "implementation": {
+            "const": "native"
+          },
+          "sample_times_ms": {
+            "minItems": 7
+          },
+          "raw_samples": {
+            "minItems": 7
+          },
+          "median_tflops": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "best_tflops": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "measurement_duration": {
+            "type": "number",
+            "minimum": 1000
+          },
+          "configuration": {
+            "type": "object",
+            "required": [
+              "actual_warmup_ms",
+              "repetitions"
+            ],
+            "properties": {
+              "actual_warmup_ms": {
+                "type": "number",
+                "minimum": 500
+              },
+              "repetitions": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          },
+          "case_id": {
+            "enum": [
+              "alu.fp32.fma",
+              "alu.fp16.fma",
+              "gemm.fp32.strict",
+              "gemm.fp16.acc32",
+              "gemm.fp8.e4m3.acc32",
+              "matrix_micro.fp16.acc32",
+              "matrix_micro.fp8.e4m3.acc32",
+              "gemm.fp16.acc16"
+            ]
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "median_tflops": {
+            "type": "null"
+          },
+          "best_tflops": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "case_id": {
+            "const": "gemm.fp16.acc16"
+          }
+        },
+        "required": [
+          "case_id"
+        ]
+      },
+      "then": {
+        "properties": {
+          "input_a": {
+            "const": "fp16"
+          },
+          "input_b": {
+            "const": "fp16"
+          },
+          "accumulation": {
+            "const": "fp16"
+          },
+          "output": {
+            "const": "fp16"
+          }
+        }
+      }
+    }
+  ]
+}

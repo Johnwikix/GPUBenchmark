@@ -1,0 +1,5 @@
+{
+  "command": ".\\out\\Release\\gpubench.exe doctor --backend cuda --json results/cuda-doctor-frozen.json",
+  "exit_code": 0,
+  "timestamp": "2026-10-20T23:23:29.1144575+08:00"
+}

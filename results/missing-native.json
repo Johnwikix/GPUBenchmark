@@ -1,0 +1,277 @@
+{
+  "app_version": "0.1.0",
+  "backends": {
+    "amd": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\amd\\amd_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "cuda": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\cuda\\cuda_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "intel": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\intel\\intel_worker.exe",
+      "reason": "worker executable not found"
+    },
+    "opencl": {
+      "backend_status": "not_built",
+      "path": "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\workers\\opencl\\opencl_worker.exe",
+      "reason": "worker executable not found"
+    }
+  },
+  "build": {
+    "app_version": "0.1.0",
+    "compiler": "195136260",
+    "loaded_modules": [
+      "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+      "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+    ],
+    "pointer_bits": 64,
+    "protocol_version": 1
+  },
+  "command_line": "\"G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe\" run --device nvidia:0 --suite gemm --dtype fp8 --require-all --json results/missing-native.json",
+  "devices": [],
+  "results": [
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "not_built",
+      "best_ms": null,
+      "best_tflops": null,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+        ],
+        "pointer_bits": 64,
+        "protocol_version": 1
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "cache": "reuse",
+        "device": {
+          "backend": "cuda",
+          "backend_index": 0,
+          "id": "nvidia:0",
+          "missing": true,
+          "name": "unavailable requested device"
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "k": 1024,
+        "m": 1024,
+        "n": 1024,
+        "native_only": true,
+        "samples": 7,
+        "seed": 20261020,
+        "suite": "gemm",
+        "warmup_ms": 500.0,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "backend": "cuda",
+        "backend_index": 0,
+        "id": "nvidia:0",
+        "missing": true,
+        "name": "unavailable requested device"
+      },
+      "error_metrics": {},
+      "git_commit": null,
+      "hardware_support": "unknown",
+      "implementation": "unknown",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 0,
+      "median_ms": null,
+      "median_tflops": null,
+      "native_evidence": [],
+      "output": "fp32",
+      "raw_samples": [],
+      "reason_code": "device_not_found",
+      "reason_message": "worker executable not found",
+      "reference_kind": null,
+      "result_status": "skipped",
+      "sample_times_ms": [],
+      "sampled_elements": 0,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": null,
+      "timing_source": null,
+      "tolerance_policy": {},
+      "validation_status": "not_run",
+      "wall_ms": null
+    },
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "not_built",
+      "best_ms": null,
+      "best_tflops": null,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+        ],
+        "pointer_bits": 64,
+        "protocol_version": 1
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "cache": "reuse",
+        "device": {
+          "backend": "cuda",
+          "backend_index": 0,
+          "id": "nvidia:0",
+          "missing": true,
+          "name": "unavailable requested device"
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "k": 2048,
+        "m": 2048,
+        "n": 2048,
+        "native_only": true,
+        "samples": 7,
+        "seed": 20261020,
+        "suite": "gemm",
+        "warmup_ms": 500.0,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "backend": "cuda",
+        "backend_index": 0,
+        "id": "nvidia:0",
+        "missing": true,
+        "name": "unavailable requested device"
+      },
+      "error_metrics": {},
+      "git_commit": null,
+      "hardware_support": "unknown",
+      "implementation": "unknown",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 0,
+      "median_ms": null,
+      "median_tflops": null,
+      "native_evidence": [],
+      "output": "fp32",
+      "raw_samples": [],
+      "reason_code": "device_not_found",
+      "reason_message": "worker executable not found",
+      "reference_kind": null,
+      "result_status": "skipped",
+      "sample_times_ms": [],
+      "sampled_elements": 0,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": null,
+      "timing_source": null,
+      "tolerance_policy": {},
+      "validation_status": "not_run",
+      "wall_ms": null
+    },
+    {
+      "accumulation": "fp32",
+      "app_version": "0.1.0",
+      "backend": "cuda",
+      "backend_status": "not_built",
+      "best_ms": null,
+      "best_tflops": null,
+      "build": {
+        "app_version": "0.1.0",
+        "compiler": "195136260",
+        "loaded_modules": [
+          "G:\\SoftwareProject\\console\\benchmark\\out\\Release\\gpubench.exe",
+          "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+        ],
+        "pointer_bits": 64,
+        "protocol_version": 1
+      },
+      "case_id": "gemm.fp8.e4m3.acc32",
+      "configuration": {
+        "cache": "reuse",
+        "device": {
+          "backend": "cuda",
+          "backend_index": 0,
+          "id": "nvidia:0",
+          "missing": true,
+          "name": "unavailable requested device"
+        },
+        "dtype": "fp8",
+        "duration_ms": 1000.0,
+        "k": 4096,
+        "m": 4096,
+        "n": 4096,
+        "native_only": true,
+        "samples": 7,
+        "seed": 20261020,
+        "suite": "gemm",
+        "warmup_ms": 500.0,
+        "workspace_mib": 256
+      },
+      "density": "dense",
+      "device": {
+        "backend": "cuda",
+        "backend_index": 0,
+        "id": "nvidia:0",
+        "missing": true,
+        "name": "unavailable requested device"
+      },
+      "error_metrics": {},
+      "git_commit": null,
+      "hardware_support": "unknown",
+      "implementation": "unknown",
+      "input_a": "ocp_e4m3",
+      "input_b": "ocp_e4m3",
+      "measurement_duration": 0,
+      "median_ms": null,
+      "median_tflops": null,
+      "native_evidence": [],
+      "output": "fp32",
+      "raw_samples": [],
+      "reason_code": "device_not_found",
+      "reason_message": "worker executable not found",
+      "reference_kind": null,
+      "result_status": "skipped",
+      "sample_times_ms": [],
+      "sampled_elements": 0,
+      "scaling": "tensor",
+      "schema_version": 1,
+      "suite": "gemm",
+      "timing_scope": null,
+      "timing_source": null,
+      "tolerance_policy": {},
+      "validation_status": "not_run",
+      "wall_ms": null
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "cancelled": false,
+    "exit_code": 5,
+    "failed": false,
+    "ok": 0,
+    "unavailable": true
+  }
+}

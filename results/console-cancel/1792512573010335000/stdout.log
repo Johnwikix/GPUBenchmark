@@ -1,0 +1,3 @@
+Device | Suite | Case | Accum | Backend | Timing | Median TFLOP/s | Best TFLOP/s | Validation | Status
+cuda:9510a92114f7034232ae2924c362def1 | alu | "alu.fp32.fma" | fp32 | cuda | "cuda_events" | 55.16498113665391 | 55.415532870752166 | passed | "ok" ok
+cuda:9510a92114f7034232ae2924c362def1 | alu | "alu.fp16.fma" | fp16 | cuda | "cuda_events" | null | null | not_run | "cancelled" user_cancelled
